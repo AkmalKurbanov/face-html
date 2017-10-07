@@ -1,0 +1,220 @@
+.services{
+	padding-top: 35px;
+	padding-bottom: 35px;
+	@media (max-width: $screen-xs-max){
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	&__block{
+		background-color: #eff1f5;	
+		width: 282.2px;
+		max-width: 100%;
+		min-height: 167px;
+		display: inline-block;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-bottom: 3px;
+		position: relative;
+		&::before,
+		&:after {
+			background-color: #243849;	
+			content: '';
+			position: absolute;
+			@media (max-width: $screen-sm-max){
+				background-color: transparent;
+			}
+		}
+		&:after {
+			height: 0;
+			left: 50%;
+			top: 50%;
+			width: 0;
+			transition: all .5s;
+		}
+		&:hover {
+			.services__img-wrap{
+				z-index: 1;
+				position: relative;
+				i{
+					color: #000;
+				}
+			}
+			.services__img-desc{
+				p{
+					color: #fff;
+					@media (max-width: $screen-sm-max){
+						color: #000;
+					}
+				}
+			}
+			&:after {
+				height: 100%;
+				left: 0;
+				top: 0;
+				width: 100%;
+			}					
+		}
+		@media screen and (max-width: 1200px){
+			padding-left: 10px;
+		}
+		@media (max-width: $screen-md-max) { 
+			width: 100%;
+			max-width: 100%;
+			padding-left: 30px;
+		}
+		@media (max-width: $screen-xs-max){
+			padding-left: 50px;
+			padding-right: 15px;
+			width: 100%;
+			max-width: 100%;
+			min-height: 100px;
+			margin-bottom: 0;
+			border-bottom: 1px solid #c0c1c4;			
+		}
+	}
+	&__img-wrap{
+		min-height: 167px;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: start;
+		align-items: center;
+		@media (max-width: $screen-xs-max){
+			min-height: 100px;
+		}
+	}
+	&__img{
+		margin-right: 17px;
+		width: 90px;
+		height: 90px;
+		border-radius: 10em;
+		display: block;
+		background-color: #fff;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		@media (max-width: $screen-md-max){
+			background-color: #fff;
+			width: 80px;
+			height: 80px;
+		}		
+		@media (max-width: $screen-xs-max){
+			width: 0;
+			height: 0;
+			padding-right: 30px;
+		}
+		i{
+			font-size: 43px;		
+			@media screen and (max-width: 1200px){
+				font-size: 35px;
+			}
+			@media (max-width: $screen-xs-max){
+				font-size: 30px;	
+			}
+		}
+		.icon-serv1{
+			margin-left: -30px;
+		}
+		.icon-serv3{
+			margin-left: -5px;
+		}
+		.icon-serv5{
+			margin-left: -10px;
+		}
+		.icon-serv7{
+			margin-left: -10px;				
+		}
+		.icon-serv9{
+			font-size: 55px;
+			@media (max-width: $screen-md-max){
+				font-size: 35px;
+			}
+			@media (max-width: $screen-xs-max){
+				font-size: 30px;
+			}
+		}
+		.icon-serv10{
+			font-size: 60px;
+			@media (max-width: $screen-md-max){
+				font-size: 45px;
+			}
+			@media (max-width: $screen-xs-max){
+				font-size: 30px;
+			}
+		}
+		.icon-serv11{
+			font-size: 60px;
+			transform: rotate(25deg);
+			@media (max-width: $screen-md-max){
+				font-size: 45px;
+			}
+			@media (max-width: $screen-xs-max){
+				font-size: 30px;
+			}
+		}
+		.icon-serv16{
+			margin-left: -15px;
+		}
+	}
+	&__block-wrap{
+		transition: all .3s;
+		color: #000;
+		&:hover{
+			text-decoration: none;
+		}
+		&:focus{
+			color: #000;
+		}
+		@media (max-width: $screen-md-max) { 
+			text-align: center;
+			width: 100%;
+			display: block;
+		}
+		@media (max-width: $screen-xs-max){
+			text-align: left;
+		}
+	}
+	&__img-desc{
+		p{
+			margin: 0;
+			font-size: 20px;
+			font-weight: 600;
+			@media screen and (max-width: 1200px){
+				font-size: 16px;
+				font-weight: 500;
+			}
+
+			@media (max-width: $screen-md-max){
+				font-size: 20px;
+			}
+			@media screen and (min-width: 992px) and (max-width: 1199px) {
+				font-size: 14px;
+			}
+			@media (max-width: $screen-xs-max) { 
+				font-size: 16px;
+				br{
+					display: none;
+				}
+			}
+		}
+	}
+	.container{
+		@media (max-width: $screen-xs-max){
+			padding: 0;
+		}
+		.caption-wrap{
+			@media (max-width: $screen-xs-max){
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+		}
+	}
+}

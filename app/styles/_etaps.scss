@@ -1,0 +1,127 @@
+.etaps{
+	padding-top: 35px;
+	@media (max-width: $screen-xs-max){
+		padding-top: 30px;
+	}
+	h1{
+		font-size: 145px;
+		color: #b6b6b6;
+		display: inline-block;
+		padding-top: 25px;
+		float: right;
+		padding-right: 30px;
+		max-width: 100px;
+		width: 100%;
+		@media screen and (max-width: 1200px){
+			display: none;
+		}
+		@media (max-width: $screen-xs-max){
+			display: none;
+		}
+	}
+	&__wrap{
+		position: relative;
+		min-height: 260px;
+		padding-top: 20px;
+		margin-top: 20px;
+		padding-left: 25px;
+		@media (max-width: $screen-sm-max){
+			padding-bottom: 25px;
+		}
+		@media (max-width: $screen-xs-max){
+			padding-left: 0;
+			text-align: center;
+			padding-bottom: 0;
+			&:first-child{
+				margin-top: 0;
+				padding-top: 0;
+			}
+		}
+		&:before{
+			position: absolute;
+			content: '';
+			font-family: 'font';
+			font-size: 25px;
+			color: #b6b6b6;
+			top: -15px;
+			@media (max-width: $screen-xs-max){
+				content: '';
+			}
+		}
+		&:after{
+			position: absolute;
+			content: '';
+			font-family: 'font';
+			font-size: 25px;
+			color: #b6b6b6;
+			top: -15px;
+			right: 0;
+			@media (max-width: $screen-xs-max){
+				content: '';
+			}
+		}
+		&--wrap{
+			min-height: 0;
+			padding: 0;
+			@media (max-width: $screen-md-max){
+				display: none;
+			}		
+			@media (max-width: $screen-xs-max){
+				text-align: center;
+			}
+		}
+	}
+	&__img-wrap{
+		max-width: 220px;
+		width: 100%;
+		min-height: 200px;
+		text-align: center;
+		@media (max-width: $screen-sm-max){
+			margin: 0 auto;
+		}
+		@media (max-width: $screen-xs-max){
+			display: inline-block;
+			max-width: 100px;
+			min-height: 100px;
+		}
+		img{
+			max-width: 100%;
+		}	
+	}
+	&__desc{
+		padding-top: 25px;
+		@media (max-width: $screen-xs-max){
+			padding-bottom: 25px;
+		}
+		h2{			
+			font-size: 25px;
+			color: #000;
+			margin: 0;
+			padding-bottom: 25px;
+			text-transform: uppercase;
+			font-weight: 500;
+			@media (max-width: $screen-xs-max){
+				padding-bottom: 15px;
+			}
+			span{
+				font-size: 30px;
+				color: #b6b6b6;
+				display: none;
+				@media screen and (max-width: 1200px){
+					display: inline-block;
+				}
+				@media (max-width: $screen-xs-max){
+					display: inline-block;
+				}
+			}
+		}
+		p{
+			font-size: 20px;
+			margin: 0;
+			line-height: 25px;
+			@media (max-width: $screen-xs-max){
+				font-size: 16px;
+			}
+		}
+	}
+}

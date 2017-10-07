@@ -1,0 +1,16 @@
+$icon-font-path: '../fonts/';
+@import "../fonts/inons/css/font.css";
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+
+@import "_helpers";
+@import "_header";
+@import "_services";
+@import "_lst-project";
+@import "_steps";
+@import "_etaps";
+@import "_connection";
+@import "_footer";
+

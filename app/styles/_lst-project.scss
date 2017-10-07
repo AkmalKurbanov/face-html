@@ -1,0 +1,115 @@
+.lst-project{
+	&__slider{
+		.item{
+			max-width: 100%;
+			min-height: 140px;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			position: relative;
+			transition: all .5s;
+			
+			&:before{
+				position: absolute;
+				content: '';
+				background-image: url('../images/plus2.png');
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-size: contain;
+				background-repeat: no-repeat;
+				@media (max-width: $screen-md-max) { 
+					display: none;
+				}
+			}
+		}	
+		.owl-dots {
+			position: absolute;
+			bottom: -45px;
+			left: 50%;
+			transform: translateX(-50%);
+			.owl-dot {
+				width: 20px;
+				display: inline-block;
+				cursor: pointer;
+				margin-left: 0;
+				&:first-child{
+					margin-left: 0;
+				}
+				span {
+					width: 12px;
+					height: 12px;
+					display: block;
+					border-radius: 50px;
+					background: #c0c1c4;
+				}
+
+				canvas {
+					display: none;
+					position: absolute;
+				}
+
+				&.active canvas {
+					display: block;
+				}
+
+				&.active,
+				&:hover {
+					border-radius: 50%;
+					span {
+						background-color: #092033;
+					}
+				}
+			}
+		}
+	}
+	&__img-wrap{		
+		max-width: 200px;
+		height: 100px;
+		overflow: hidden;
+		margin: 0 auto;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		img{
+			width: 100%;
+			max-width: 100%;
+		}
+		&--img-wrap{
+			position: absolute;
+			display: none;
+			max-width: 250px;
+			width: 100%;
+			min-height: 80px;
+			background-color: #eff1f5;
+			p{
+				color: #000;
+				font-size: 18px;
+				margin: 0;
+				&:first-child{
+					font-size: 20px;
+					padding-bottom: 5px;
+				}
+			}
+		}
+		&:hover{
+			text-decoration: none;
+		}
+		&:focus{
+			text-decoration: none;
+			color: #000; 
+		}
+	}
+}
