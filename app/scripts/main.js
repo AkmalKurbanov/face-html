@@ -91,7 +91,7 @@ $(".login").submit(function(){
 });
 
 
-
+  
 
 
 
@@ -199,15 +199,15 @@ if (Modernizr.mq('(max-width: 767px)')) {
     $('#map').html('');
     myMap = new ymaps.Map('map', {
       controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
-      center: [59.925655, 30.312032],
+      center: [55.755814, 37.617635],
       behaviors: ['drag'],
       zoom: 17
     });
 
     if (!data.type) {
-      myPlacemark = new ymaps.Placemark([59.925655, 30.312032], {
+      myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
         balloonContentHeader: '',
-        balloonContentBody: 'г. Санкт-Петербург, м. Садовая, наб. канала Грибоедова, 70'
+        balloonContentBody: ''
       });
       myMap.geoObjects.add(myPlacemark);
       return true;
@@ -219,4 +219,35 @@ if (Modernizr.mq('(max-width: 767px)')) {
 
 
 
+});
+
+(function ($) { 
+    $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+    
+    $('.tab ul.tabs li a').click(function (g) { 
+      var tab = $(this).closest('.tab'), 
+        index = $(this).closest('li').index();
+      
+      tab.find('ul.tabs > li').removeClass('current');
+      $(this).closest('li').addClass('current');
+      
+      tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+      tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+      
+      g.preventDefault();
+    } );
+  })(jQuery);
+
+  $(document).ready(function() {
+  
+  $(".selLabel").click(function () {
+    $('.dropdown').toggleClass('active');
+  });
+  
+  $(".dropdown-list li").click(function() {
+    $('.selLabel').text($(this).text());
+    $('.dropdown').removeClass('active');
+    $('.selected-item p span').text($('.selLabel').text());
+  });
+  
 });
