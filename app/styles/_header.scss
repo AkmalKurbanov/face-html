@@ -29,44 +29,92 @@
 		}
 	}
 	&__menu-nav{
-		min-height: 110px;
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-		@media (max-width: $screen-sm-max){
-			display: none;
-		}
-		ul{
-			margin: 0;
-			padding: 0;
+		ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+  }
+  &.menu > li {
+    float: left;
+    position: relative;
+    > a {
+      display: block;
+      padding: 10px;
+      color: white;
+      background-color: red;
+      text-decoration: none;
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+  &.submenu {
+    display: none;
+    position: absolute;
+    width: 120px;
+    top: 37px;
+    left: 0;
+    background-color: white;
+    border: 1px solid red;
+    > li {
+      display: block;
+      > a {
+        display: block;
+        padding: 10px;
+        color: white;
+        background-color: red;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+		// min-height: 110px;
+		// display: -webkit-flex;
+		// display: -moz-flex;
+		// display: -ms-flex;
+		// display: -o-flex;
+		// display: flex;
+		// justify-content: center;
+		// flex-direction: column;
+		// align-items: center;
+		// @media (max-width: $screen-sm-max){
+		// 	display: none;
+		// }
+		// ul{
+		// 	margin: 0;
+		// 	padding: 0;
 			
-			li{
-				list-style-type: none;
-				display: inline-block;
-				margin-left: 45px;
-				font-weight: 500;
-				@media (max-width: $screen-md-max){
-					margin-left: 15px;					
-				}
-				&:first-child{
-					margin-left: 0;
-				}
-				a{
-					text-decoration: none;
-					color: #5c5c5c;
-					font-size: 20px;
-					transition: all .5s;
-					&:hover{
-						color: #092033;
-					}
-				}
-			}
-		}
+		// 	li{
+		// 		list-style-type: none;
+		// 		display: inline-block;
+		// 		margin-left: 45px;
+		// 		font-weight: 500;
+		// 		@media (max-width: $screen-md-max){
+		// 			margin-left: 15px;					
+		// 		}
+		// 		&:first-child{
+		// 			margin-left: 0;
+		// 		}
+		// 		a{
+		// 			text-decoration: none;
+		// 			color: #5c5c5c;
+		// 			font-size: 20px;
+		// 			transition: all .5s;
+		// 			&:hover{
+		// 				color: #092033;
+		// 			}
+		// 		}
+		// 	}
+		// }
 	}
 	&__phone{
 		min-height: 110px;
