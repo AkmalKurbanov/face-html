@@ -1,4 +1,12 @@
-$(function() {
+
+
+
+
+
+
+'use strict';
+
+$(document).ready(function () {
 
 
 
@@ -49,9 +57,10 @@ $('.js-phone').mask('+7 (999) 999-99-99');
 $('.js-slider').owlCarousel({
   loop:true,
   margin:10,
-  nav:false, 
+  nav:true, 
   items: 1,
-  mouseDrag: false,
+  mouseDrag: true,
+  navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
 })
 
 $('.js-slider-second').owlCarousel({
@@ -91,155 +100,27 @@ $(".login").submit(function(){
 });
 
 
-  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// mmenu
-$('.header__menu-nav ul').clone().appendTo('.mmenu-nav');
-
-var $menu = $('.mmenu-nav').mmenu({
-  navbar: {
-    title: 'Меню'
-  },
-  extensions: [
-  'fx-menu-slide',
-  'fx-listitems-slide',
-  'border-full',
-  'pagedim-black'
-
-  ],
-  offCanvas: {
-    'position': 'right'
-  },
-  counters: true
-});
-
-var $icon = $('.js-navtrigger');
-var API = $menu.data('mmenu');
-
-$icon.on('click', function() {
-  API.open();
-});
-
-API.bind('open:start', function($panel) {
-  $('.js-navtrigger').toggleClass('-active');
-});
-
-API.bind('close:start', function($panel) {
-  $('.js-navtrigger').toggleClass('-active');
-});
-
-if (Modernizr.mq('(max-width: 767px)')) {
-  $('a.-pagescroll[href*="#"]:not([href="#"])').click(function() {
-    API.close();
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return true;
-      }
-    }
-  });
-  var myMap, myPlacemark;
-
-  ymaps.ready(init);
-
-  function init(data) {
-    $('#map').html('');
-    myMap = new ymaps.Map('map', {
-      controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
-      center: [59.925655, 30.312032],
-      behaviors: ['drag'],
-      zoom: 17
-    });
-
-    if (!data.type) {
-      myPlacemark = new ymaps.Placemark([59.925655, 30.312032], {
-        balloonContentHeader: '',
-        balloonContentBody: ''
-
-      });
-      myMap.geoObjects.add(myPlacemark);
-      return true;
-    };
-  };
-} else {
-  $('a.-pagescroll[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return true;
-      }
-    }
-  });
-  var myMap, myPlacemark;
-
-  ymaps.ready(init);
-
-  function init(data) {
-    $('#map').html('');
-    myMap = new ymaps.Map('map', {
-      controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
-      center: [55.755814, 37.617635],
-      behaviors: ['drag'],
-      zoom: 17
-    });
-
-    if (!data.type) {
-      myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
-        balloonContentHeader: '',
-        balloonContentBody: ''
-      });
-      myMap.geoObjects.add(myPlacemark);
-      return true;
-    };
-  };
-}
-  // mmenu
-
-
-
-
-});
 
 (function ($) { 
-    $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
-    
-    $('.tab ul.tabs li a').click(function (g) { 
-      var tab = $(this).closest('.tab'), 
-        index = $(this).closest('li').index();
-      
-      tab.find('ul.tabs > li').removeClass('current');
-      $(this).closest('li').addClass('current');
-      
-      tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
-      tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
-      
-      g.preventDefault();
-    } );
-  })(jQuery);
+  $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
 
-  $(document).ready(function() {
-  
+  $('.tab ul.tabs li a').click(function (g) { 
+    var tab = $(this).closest('.tab'), 
+    index = $(this).closest('li').index();
+
+    tab.find('ul.tabs > li').removeClass('current');
+    $(this).closest('li').addClass('current');
+
+    tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+    tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+
+    g.preventDefault();
+  } );
+})(jQuery);
+
+$(document).ready(function() {
+
   $(".selLabel").click(function () {
     $('.dropdown').toggleClass('active');
   });
@@ -251,3 +132,128 @@ if (Modernizr.mq('(max-width: 767px)')) {
   });
   
 });
+
+
+
+
+
+
+
+
+
+  $('.header__wrap--menu ul').clone().appendTo('.mmenu-nav');
+
+  var $menu = $('.mmenu-nav').mmenu({
+    navbar: {
+      title: '<img src=\'images/logo.png\' alt=\'\' />'
+    },
+    extensions: ['fx-menu-slide', 'fx-listitems-slide', 'border-full', 'pagedim-black'],
+    offCanvas: {
+      'position': 'right'
+    },
+    counters: true
+  });
+
+  var $icon = $('.js-navtrigger');
+  var API = $menu.data('mmenu');
+
+  $icon.on('click', function () {
+    API.open();
+  });
+
+  API.bind('open:start', function ($panel) {
+    $('.js-navtrigger').toggleClass('-active');
+  });
+
+  API.bind('close:start', function ($panel) {
+    $('.js-navtrigger').toggleClass('-active');
+  });
+
+  if (Modernizr.mq('(max-width: 992px)')) {
+    $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
+      API.close();
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - 115
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  } else {
+    $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - 73
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  }
+
+  if (Modernizr.mq('(max-width: 767px)')) {
+    var init = function init(data) {
+      $('#map').html('');
+      myMap = new ymaps.Map('map', {
+        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
+        center: [55.755814, 37.617635],
+        behaviors: ['drag'],
+        zoom: 17
+      });
+
+      if (!data.type) {
+        myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
+          balloonContentHeader: 'KidsLab',
+          balloonContentBody: 'Москва, ул. 2-я Мякининская, дом 9'
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/marker.png',
+          iconImageSize: [35, 55]
+        });
+        myMap.geoObjects.add(myPlacemark);
+        return true;
+      };
+    };
+
+    var myMap, myPlacemark;
+
+    ymaps.ready(init);
+    ;
+  } else {
+    var _init = function _init(data) {
+      $('#map').html('');
+      myMap = new ymaps.Map('map', {
+        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
+        center: [55.755814, 37.617635],
+        behaviors: ['drag'],
+        zoom: 17
+      });
+
+      if (!data.type) {
+        myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
+          balloonContentHeader: 'InterFace',
+          balloonContentBody: 'Москва ул.Кожевническая 10с1'
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/marker.png',
+          iconImageSize: [35, 55]
+        });
+        myMap.geoObjects.add(myPlacemark);
+        return true;
+      };
+    };
+
+    var myMap, myPlacemark;
+
+    ymaps.ready(_init);
+    ;
+  }
+});
+  

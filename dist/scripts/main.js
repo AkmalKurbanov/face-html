@@ -1,6 +1,8 @@
-"use strict";
 
-$(function () {
+
+'use strict';
+
+$(document).ready(function () {
 
   //E-mail Ajax Send
   $('form').submit(function () {
@@ -48,9 +50,10 @@ $(function () {
   $('.js-slider').owlCarousel({
     loop: true,
     margin: 10,
-    nav: false,
+    nav: true,
     items: 1,
-    mouseDrag: false
+    mouseDrag: true,
+    navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
   });
 
   $('.js-slider-second').owlCarousel({
@@ -89,12 +92,41 @@ $(function () {
     return false;
   });
 
-  // mmenu
-  $('.header__menu-nav ul').clone().appendTo('.mmenu-nav');
+  (function ($) {
+    $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+
+    $('.tab ul.tabs li a').click(function (g) {
+      var tab = $(this).closest('.tab'),
+          index = $(this).closest('li').index();
+
+      tab.find('ul.tabs > li').removeClass('current');
+      $(this).closest('li').addClass('current');
+
+      tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+      tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+
+      g.preventDefault();
+    });
+  })(jQuery);
+
+  $(document).ready(function () {
+
+    $(".selLabel").click(function () {
+      $('.dropdown').toggleClass('active');
+    });
+
+    $(".dropdown-list li").click(function () {
+      $('.selLabel').text($(this).text());
+      $('.dropdown').removeClass('active');
+      $('.selected-item p span').text($('.selLabel').text());
+    });
+  });
+
+  $('.header__wrap--menu ul').clone().appendTo('.mmenu-nav');
 
   var $menu = $('.mmenu-nav').mmenu({
     navbar: {
-      title: 'Меню'
+      title: '<img src=\'images/logo.png\' alt=\'\' />'
     },
     extensions: ['fx-menu-slide', 'fx-listitems-slide', 'border-full', 'pagedim-black'],
     offCanvas: {
@@ -118,27 +150,7 @@ $(function () {
     $('.js-navtrigger').toggleClass('-active');
   });
 
-  if (Modernizr.mq('(max-width: 767px)')) {
-    var init = function init(data) {
-      $('#map').html('');
-      myMap = new ymaps.Map('map', {
-        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
-        center: [59.925655, 30.312032],
-        behaviors: ['drag'],
-        zoom: 17
-      });
-
-      if (!data.type) {
-        myPlacemark = new ymaps.Placemark([59.925655, 30.312032], {
-          balloonContentHeader: '',
-          balloonContentBody: ''
-
-        });
-        myMap.geoObjects.add(myPlacemark);
-        return true;
-      };
-    };
-
+  if (Modernizr.mq('(max-width: 992px)')) {
     $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
       API.close();
       if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -146,16 +158,54 @@ $(function () {
         target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
         if (target.length) {
           $('html, body').animate({
-            scrollTop: target.offset().top
+            scrollTop: target.offset().top - 115
           }, 1000);
-          return true;
+          return false;
         }
       }
     });
+  } else {
+    $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - 73
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  }
+
+  if (Modernizr.mq('(max-width: 767px)')) {
+    var init = function init(data) {
+      $('#map').html('');
+      myMap = new ymaps.Map('map', {
+        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
+        center: [55.755814, 37.617635],
+        behaviors: ['drag'],
+        zoom: 17
+      });
+
+      if (!data.type) {
+        myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
+          balloonContentHeader: 'KidsLab',
+          balloonContentBody: 'Москва, ул. 2-я Мякининская, дом 9'
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/marker.png',
+          iconImageSize: [35, 55]
+        });
+        myMap.geoObjects.add(myPlacemark);
+        return true;
+      };
+    };
+
     var myMap, myPlacemark;
 
     ymaps.ready(init);
-
     ;
   } else {
     var _init = function _init(data) {
@@ -169,62 +219,21 @@ $(function () {
 
       if (!data.type) {
         myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
-          balloonContentHeader: '',
-          balloonContentBody: ''
+          balloonContentHeader: 'InterFace',
+          balloonContentBody: 'Москва ул.Кожевническая 10с1'
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'images/marker.png',
+          iconImageSize: [35, 55]
         });
         myMap.geoObjects.add(myPlacemark);
         return true;
       };
     };
 
-    $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return true;
-        }
-      }
-    });
     var myMap, myPlacemark;
 
     ymaps.ready(_init);
-
     ;
   }
-  // mmenu
-
-});
-
-(function ($) {
-  $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
-
-  $('.tab ul.tabs li a').click(function (g) {
-    var tab = $(this).closest('.tab'),
-        index = $(this).closest('li').index();
-
-    tab.find('ul.tabs > li').removeClass('current');
-    $(this).closest('li').addClass('current');
-
-    tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
-    tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
-
-    g.preventDefault();
-  });
-})(jQuery);
-
-$(document).ready(function () {
-
-  $(".selLabel").click(function () {
-    $('.dropdown').toggleClass('active');
-  });
-
-  $(".dropdown-list li").click(function () {
-    $('.selLabel').text($(this).text());
-    $('.dropdown').removeClass('active');
-    $('.selected-item p span').text($('.selLabel').text());
-  });
 });
