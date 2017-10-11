@@ -315,6 +315,134 @@ body{
 	}
 }
 
+.pagination{
+	width: 100%;
+	max-width: 100%;
+	padding-top: 65px;
+	@media (max-width: $screen-xs-max){
+		padding-top: 20px;
+	}
+	margin: 0;
+	.nav-links {
+		border-top: 1px solid #c0c1c4;
+		padding-top: 20px;
+		padding-bottom: 35px;
+		@media (max-width: $screen-xs-max) {
+			text-align: center;
+			padding-top: 15px;
+			padding-bottom: 20px;
+		}
+
+		.page-numbers {
+			font-size: 20px;
+			margin-right: 13px;
+			color: #c0c1c4;
+			background-color: #eff1f5;
+			width: 40px;
+			height: 40px;
+			display: inline-block;
+			text-align: center;
+			line-height: 40px;
+			text-decoration: none;
+			transition: all .5s;
+			&:last-child{
+				margin-right: 0;
+			}
+			@media (max-width: $screen-xs-max){
+				width: 25px;
+				height: 25px;
+				margin-right: 3px;
+				line-height: 25px;
+				margin-bottom: 5px;
+				font-size: 16px;
+			}
+			&:nth-child(7){
+				margin: 0;
+			}
+			&:hover {
+				background: #092033;
+				color: #fff;
+			}
+		}
+
+		.current {
+			background: #092033;
+			color: #fff;
+		}
+
+		.dots {
+			background-color: transparent;
+			border: none;
+			margin: 0;
+			&:hover {
+				background: none;
+			}
+		}
+
+		.-prev {
+			font-size: 18px;
+			width: 30px;
+			height: 30px;
+			line-height: 27px;
+			padding: 0;
+			margin: 0;
+			border: 1px #E8E9E9 solid;
+			color: #E8E9E9;
+			background-color: transparent;
+
+			&:hover {
+				background: #BBBBBB;
+				color: #E9E9E9;
+			}
+		}
+
+		.-next {
+			font-size: 18px;
+			width: 30px;
+			height: 30px;
+			line-height: 27px;
+			padding: 0;
+			margin: 0;
+			border: 1px #E8E9E9 solid;
+			color: #E8E9E9;
+			background-color: transparent;
+
+			&:hover {
+				background: #BBBBBB;
+				color: #E9E9E9;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
