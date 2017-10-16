@@ -1,14 +1,15 @@
-
-
-
-
-
-
 'use strict';
 
 $(document).ready(function () {
 
-
+// scroll
+ $("a.ancLinks").click(function () { 
+      var elementClick = $(this).attr("href");
+      var destination = $(elementClick).offset().top;
+      $('html,body').animate( { scrollTop: destination }, 1100 );
+      return false;
+    });
+// scroll
 
  //E-mail Ajax Send
  $('form').submit(function() {
@@ -81,8 +82,28 @@ $('.js-slider-second').owlCarousel({
     },
   }
 })
+
+$('.js-blog-slider').owlCarousel({
+  loop:true,
+  margin:30,
+  nav:true,
+  dots:true,
+  navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+  responsive:{
+    0:{
+      items: 1,
+    },
+    600:{
+      items: 2,
+    },
+    1000:{
+      items: 3,
+    },
+  }
+})
 // owl-carousel
 
+// form animation
 $( ".input" ).focusin(function() {
   $( this ).find( "span" ).animate({"opacity":"0"}, 200);
 });
@@ -98,12 +119,24 @@ $(".login").submit(function(){
   $("input").css({"border-color":"#2ecc71"});
   return false;
 });
+// form animation
+
+// masonry
+jQuery(document).ready(function($) {
+  $('.elements-gride').masonry({
+        // options
+        itemSelector: '.element-item',
+        columnWidth: 3000
+      });
+});
+// masonry
 
 
 
 
 
 
+// drop down
 $(document).ready(function() {
 
   $(".selLabel").click(function () {
@@ -117,128 +150,179 @@ $(document).ready(function() {
   });
   
 });
+// drop down
+
+
+const labels = document.querySelectorAll('label');
+const getInput = val => document.getElementById(`star_${val}`);
+
+labels.forEach(label => {
+  label.addEventListener('touchstart', e => {
+    const targetInput = getInput(e.target.control.value);
+    targetInput.checked = true;
+  })
+
+  label.addEventListener('touchmove', e => {
+    const touch = e.touches[0]
+    const targetLabel = document.elementFromPoint(touch.clientX, touch.clientY)
+
+    if (!targetLabel || !targetLabel.htmlFor) {
+      return
+    }
+
+    const targetInput = document.getElementById(targetLabel.htmlFor)
+    targetInput.checked = true;
+  })
+})
 
 
 
 
 
+// mmenu
+$('.header__menu-nav ul').clone().appendTo('.mmenu-nav');
 
-
-
-
-  $('.header__wrap--menu ul').clone().appendTo('.mmenu-nav');
-
-  var $menu = $('.mmenu-nav').mmenu({
-    navbar: {
-      title: '<img src=\'images/logo.png\' alt=\'\' />'
-    },
-    extensions: ['fx-menu-slide', 'fx-listitems-slide', 'border-full', 'pagedim-black'],
-    offCanvas: {
-      'position': 'right'
-    },
-    counters: true
-  });
-
-  var $icon = $('.js-navtrigger');
-  var API = $menu.data('mmenu');
-
-  $icon.on('click', function () {
-    API.open();
-  });
-
-  API.bind('open:start', function ($panel) {
-    $('.js-navtrigger').toggleClass('-active');
-  });
-
-  API.bind('close:start', function ($panel) {
-    $('.js-navtrigger').toggleClass('-active');
-  });
-
-  if (Modernizr.mq('(max-width: 992px)')) {
-    $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
-      API.close();
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top - 115
-          }, 1000);
-          return false;
-        }
-      }
-    });
-  } else {
-    $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top - 73
-          }, 1000);
-          return false;
-        }
-      }
-    });
-  }
-
-  if (Modernizr.mq('(max-width: 767px)')) {
-    var init = function init(data) {
-      $('#map').html('');
-      myMap = new ymaps.Map('map', {
-        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
-        center: [55.755814, 37.617635],
-        behaviors: ['drag'],
-        zoom: 17
-      });
-
-      if (!data.type) {
-        myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
-          balloonContentHeader: 'KidsLab',
-          balloonContentBody: 'Москва, ул. 2-я Мякининская, дом 9'
-        }, {
-          iconLayout: 'default#image',
-          iconImageHref: 'images/marker.png',
-          iconImageSize: [35, 55]
-        });
-        myMap.geoObjects.add(myPlacemark);
-        return true;
-      };
-    };
-
-    var myMap, myPlacemark;
-
-    ymaps.ready(init);
-    ;
-  } else {
-    var _init = function _init(data) {
-      $('#map').html('');
-      myMap = new ymaps.Map('map', {
-        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
-        center: [55.755814, 37.617635],
-        behaviors: ['drag'],
-        zoom: 17
-      });
-
-      if (!data.type) {
-        myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
-          balloonContentHeader: 'InterFace',
-          balloonContentBody: 'Москва ул.Кожевническая 10с1'
-        }, {
-          iconLayout: 'default#image',
-          iconImageHref: 'images/marker.png',
-          iconImageSize: [35, 55]
-        });
-        myMap.geoObjects.add(myPlacemark);
-        return true;
-      };
-    };
-
-    var myMap, myPlacemark;
-
-    ymaps.ready(_init);
-    ;
-  }
+var $menu = $('.mmenu-nav').mmenu({
+  navbar: {
+    title: '<img src=\'images/logo-mmenu.png\' alt=\'\' />'
+  },
+  extensions: ['fx-menu-slide', 'fx-listitems-slide', 'border-full', 'pagedim-black'],
+  offCanvas: {
+    'position': 'right'
+  },
+  counters: true
 });
-  
+
+var $icon = $('.js-navtrigger');
+var API = $menu.data('mmenu');
+
+$icon.on('click', function () {
+  API.open();
+});
+
+API.bind('open:start', function ($panel) {
+  $('.js-navtrigger').toggleClass('-active');
+});
+
+API.bind('close:start', function ($panel) {
+  $('.js-navtrigger').toggleClass('-active');
+});
+
+if (Modernizr.mq('(max-width: 992px)')) {
+  $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
+    API.close();
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 115
+        }, 1000);
+        return false;
+      }
+    }
+  });
+} else {
+  $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top - 73
+        }, 1000);
+        return false;
+      }
+    }
+  });
+}
+
+if (Modernizr.mq('(max-width: 767px)')) {
+  var init = function init(data) {
+    $('#map').html('');
+    myMap = new ymaps.Map('map', {
+      controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
+      center: [55.755814, 37.617635],
+      behaviors: ['drag'],
+      zoom: 17
+    });
+
+    if (!data.type) {
+      myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
+        balloonContentHeader: 'KidsLab',
+        balloonContentBody: 'Москва, ул. 2-я Мякининская, дом 9'
+      }, {
+        iconLayout: 'default#image',
+        iconImageHref: 'images/marker.png',
+        iconImageSize: [35, 55]
+      });
+      myMap.geoObjects.add(myPlacemark);
+      return true;
+    };
+  };
+
+  var myMap, myPlacemark;
+
+  ymaps.ready(init);
+  ;
+} else {
+  var _init = function _init(data) {
+    $('#map').html('');
+    myMap = new ymaps.Map('map', {
+      controls: ['zoomControl', 'fullscreenControl', 'geolocationControl'],
+      center: [55.755814, 37.617635],
+      behaviors: ['drag'],
+      zoom: 17
+    });
+
+    if (!data.type) {
+      myPlacemark = new ymaps.Placemark([55.755814, 37.617635], {
+        balloonContentHeader: 'InterFace',
+        balloonContentBody: 'Москва ул.Кожевническая 10с1'
+      }, {
+        iconLayout: 'default#image',
+        iconImageHref: 'images/marker.png',
+        iconImageSize: [35, 55]
+      });
+      myMap.geoObjects.add(myPlacemark);
+      return true;
+    };
+  };
+
+  var myMap, myPlacemark;
+
+  ymaps.ready(_init);
+  ;
+}
+});
+// mmenu
+
+
+
+
+
+var $star_rating = $('.star-rating .fa');
+
+var SetRatingStar = function() {
+  return $star_rating.each(function() {
+    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+      return $(this).removeClass('fa-star-o').addClass('fa-star');
+    } else {
+      return $(this).removeClass('fa-star').addClass('fa-star-o');
+    }
+  });
+};
+
+$star_rating.on('click', function() {
+  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+  return SetRatingStar();
+});
+
+SetRatingStar();
+$(document).ready(function() {
+
+});
+
+
+
+

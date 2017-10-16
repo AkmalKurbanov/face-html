@@ -1,0 +1,133 @@
+.portfolio{
+	padding: 40px 0;	
+	.blog__choose{
+		border-bottom: 1px solid #c0c1c4;
+		ul{
+			li{
+				margin-right: 5px;
+			}
+		}
+	}
+	&__search{
+		position: relative;
+		button{
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: block;
+			min-height: 50px;
+			max-width: 50px;
+			width: 100%;
+			background-color: #eff1f5;
+			border: none;
+			outline: none;
+			i{
+				font-size: 18px;
+				color: #828282;
+			}
+		}
+	}
+	&__input-wrap{
+		display: block;
+		::-webkit-input-placeholder {
+			color:#cccccc;
+			font-size: 18px;
+			@media (max-width: $screen-xs-max){
+				font-size: 16px;
+			}
+		}
+		input{
+			max-width: 100%;
+			width: 100%;
+			min-height: 50px;
+			border: 1px solid #eff1f5;
+			padding-left: 20px;
+			outline: none;
+		}
+	}
+	&__tiles{
+		text-align: center;
+	}
+	.element-item { 
+		max-width: 360px;
+		width: 100%;
+		position: relative;
+		display: block;
+		margin: 0 auto; 
+		margin-top: 30px;
+		&:before{
+			content: '';
+			position: absolute;
+			background-color: rgba(9,32,51,0.53);
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: none;
+			-webkit-transition: width 2s ease, height 2s ease;  
+			-moz-transition: width 2s ease, height 2s ease;  
+			-o-transition: width 2s ease, height 2s ease;  
+			-ms-transition: width 2s ease, height 2s ease;  
+			transition: width 2s ease, height 2s ease;  
+		}
+		&:hover{
+			&:before{
+				display: block;
+			}
+			.portfolio__caption-item-top{
+				display: block;
+			}
+			.portfolio__caption-item-bottom{
+				display: block;
+			}
+		}
+		img{
+			width: 100%;
+			max-width: 100%;
+		}
+	}	
+	&__caption-item-top{
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+		position: absolute;
+		top: 20%;
+		transform: translateY(-20%);
+		display: none;
+		h2{
+			font-size: 20px;
+			text-transform: uppercase;
+			color: #fff;
+		}
+	}
+	&__caption-item-bottom{
+		padding: 15px 15px;
+		background-color: #092033;
+		position: absolute;
+		bottom: 0;
+		max-width: 360px;
+		width: 100%;
+		display: none;
+		@media (max-width: $screen-xs-max){
+			padding: 10px 10px;
+		}
+		span{
+			border-bottom: 1px solid #fff;
+			display: block;
+			padding-bottom: 15px;
+			margin-bottom: 15px;
+			@media (max-width: $screen-xs-max){
+				padding-bottom: 10px;
+				margin-bottom: 10px;
+			}
+		}
+		p{
+			font-size: 18px;
+			color: #fff;
+			margin: 0;
+			@media (max-width: $screen-xs-max){
+				font-size: 16px;
+			}
+		}
+	}
+}

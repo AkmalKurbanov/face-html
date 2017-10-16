@@ -15,6 +15,10 @@
 		padding-right: 15px;
 		margin-bottom: 3px;
 		position: relative;
+		&--dev{
+			width: 100%;
+			max-width: 100%;
+		}
 		&::before,
 		&:after {
 			background-color: #243849;	
@@ -45,6 +49,18 @@
 					@media (max-width: $screen-sm-max){
 						color: #000;
 					}
+				}		
+				span{
+					color: #fff;
+					@media (max-width: $screen-sm-max){
+						color: #000;
+					}
+				}		
+				h2{
+					color: #fff;
+					@media (max-width: $screen-sm-max){
+						color: #000;
+					}
 				}
 			}
 			&:after {
@@ -70,7 +86,7 @@
 			min-height: 100px;
 			margin-bottom: 0;
 			border-bottom: 1px solid #c0c1c4;			
-		}
+		}		
 	}
 	&__img-wrap{
 		min-height: 167px;
@@ -183,10 +199,11 @@
 		}
 	}
 	&__img-desc{
+		text-align: left;
 		p{
 			margin: 0;
 			font-size: 20px;
-			font-weight: 600;
+			font-weight: 500;
 			@media screen and (max-width: 1200px){
 				font-size: 16px;
 				font-weight: 500;
