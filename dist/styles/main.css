@@ -13011,7 +13011,7 @@ body {
 
 .etaps__wrap:before {
   position: absolute;
-  content: '';
+  content: '';
   font-family: 'font';
   font-size: 25px;
   color: #b6b6b6;
@@ -13026,7 +13026,7 @@ body {
 
 .etaps__wrap:after {
   position: absolute;
-  content: '';
+  content: '';
   font-family: 'font';
   font-size: 25px;
   color: #b6b6b6;
@@ -15187,4 +15187,122 @@ body {
     display: block;
     width: 100%;
   }
+}
+
+.dev {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.dev__application {
+  padding: 25px 0;
+}
+
+.dev .services__block {
+  width: 800px;
+}
+
+.dev__cycle {
+  min-height: 540px;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  background-image: url("../images/dev_bg.png");
+  background-position: 0 130px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.dev__etaps span {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.dev__etaps span:nth-child(1) {
+  position: absolute;
+  bottom: 16px;
+}
+
+.dev__etaps span:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  left: 500px;
+}
+
+.dev__etaps span:nth-child(3) {
+  position: absolute;
+  left: 850px;
+  bottom: 16px;
+}
+
+.dev__etaps span:nth-child(4) {
+  position: absolute;
+  right: 0;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.dev__step {
+  padding-bottom: 25px;
+  min-height: 380px;
+}
+
+.dev__step p {
+  font-size: 20px;
+  margin: 0;
+  line-height: 24px;
+}
+
+.dev__step--bg-arrow {
+  background-image: url("../images/dev_bg-arrow.png");
+  background-repeat: no-repeat;
+  background-position: 180px 105px;
+}
+
+.dev__wrap {
+  min-height: 240px;
+}
+
+.dev__wrap i {
+  font-size: 100px;
+  color: #092033;
+}
+
+.dev__wrap h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.dev__desc {
+  border-top: 1px solid #c0c1c4;
+  padding: 30px 0;
+}
+
+.dev__desc p {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0;
+  padding-bottom: 13px;
+}
+
+.dev__create {
+  border-top: 1px solid #c0c1c4;
+  padding: 20px 0;
+}
+
+.dev__create h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+}
+
+.dev__img-wrap {
+  width: 100%;
+  max-width: 100%;
+}
+
+.dev__img-wrap img {
+  width: 100%;
+  max-width: 100%;
+  min-height: 265px;
 }
