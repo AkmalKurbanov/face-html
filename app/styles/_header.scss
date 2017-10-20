@@ -77,8 +77,8 @@
 				}
 			}				
 			a{
-				font-size: 20px;
-				color: #5c5c5c;
+				font-size: 20px;				
+				color: #5c5c5c;				
 				text-decoration: none;
 				position: relative;
 				display: block;
@@ -208,7 +208,7 @@
 	&__slider{
 
 		.item{
-			min-height: 530px;
+			min-height: 560px;
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
@@ -381,7 +381,7 @@
 						margin-top: 35px;
 						@media screen and (max-width: 1200px){
 							margin-left: -30px;
-							margin-top: 65px;
+							margin-top: 50px;
 						}
 						@media (max-width: $screen-md-max){
 							margin: 0;
@@ -392,7 +392,7 @@
 						margin-top: 55px;
 						@media screen and (max-width: 1200px){
 							margin-left: -100px;		
-							margin-top: 70px;					
+							margin-top: 55px;					
 						}
 						@media (max-width: $screen-md-max){
 							margin: 0;
@@ -404,7 +404,7 @@
 						padding-bottom: 0;
 						@media screen and (max-width: 1200px){
 							margin-left: -30px;		
-							margin-top: 65px;					
+							margin-top: 45px;					
 						}
 						@media (max-width: $screen-md-max){
 							margin: 0;

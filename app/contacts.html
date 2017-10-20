@@ -134,45 +134,44 @@
           </ul>
         </div>
         <div class="col-md-5 col-md-offset-1">
-          <form class="login">
-           <!-- Hidden Required Fields -->
-           <input type="hidden" name="project_name" value="Site Name">
-           <input type="hidden" name="admin_email" value="250296a@gmail.com">
-           <input type="hidden" name="form_subject" value="Form Subject">
-           <!-- END Hidden Required Fields -->
-           <fieldset>
+         <form method="post" class="login">
+      
+      <!-- Hidden Required Fields -->
+      <input type="hidden" name="project_name" value="Site Name">
+      <input type="hidden" name="admin_email" value="250296a@gmail.com">
+      <input type="hidden" name="form_subject" value="Form Subject">
+      <!-- END Hidden Required Fields -->
+
+      <div class="input">
+        <input type="text" name="Имя" placeholder="Имя" required />
+        <span><i class="fa fa-user-o"></i></span>
+      </div>
+
+      <div class="input">
+        <input type="text" name="Email" placeholder="Email" required />
+        <span><i class="fa fa-envelope-o"></i></span>
+      </div>
+
+      <div class="input">
+        <input class="js-phone" name="Телефон" type="text" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required />
+        <span><i class="fa fa-mobile"></i></span>
+      </div>
+
+      <div class="input">
+        <textarea name="text" placeholder="Хочу получить консультацию"></textarea>
+        <span><i class="fa fa-comment-o"></i></span>
+      </div>
+
+      <button type="submit" class="submit">Отправить</button>
+      <a href="#">Ознакомиться с Политикой конфиденциальности</a>
 
 
-            <div class="input">
-              <input type="text" placeholder="Имя" required />
-              <span><i class="fa fa-user-o"></i></span>
-            </div>
+      <div class="feedback">
+        Заявка принята! <br>
+        Мы свяжемся с вами через несколько минут.
+      </div>
 
-            <div class="input">
-              <input type="Email" placeholder="Email" required />
-              <span><i class="fa fa-envelope-o"></i></span>
-            </div>
-
-            <div class="input">
-              <input class="js-phone" type="text" placeholder="Телефон" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required />
-              <span><i class="fa fa-mobile"></i></span>
-            </div>
-
-            <div class="input">
-              <textarea name="" id="" placeholder="Хочу получить консультацию"></textarea>
-              <span><i class="fa fa-comment-o"></i></span>
-            </div>
-
-            <button type="submit" class="submit">Отправить</button>
-            <a href="#">Ознакомиться с Политикой конфиденциальности</a>
-          </fieldset>
-
-          <div class="feedback">
-            login successful <br />
-            redirecting...
-          </div>
-
-        </form>
+    </form>
 
       </div>
     </div>
@@ -221,7 +220,7 @@
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="footer__confidential">
-          <p>Политика конфиденциальности</p>
+          <a href="#"><p>Политика конфиденциальности</p></a>
         </div>
       </div>
     </div>

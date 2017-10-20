@@ -147,9 +147,22 @@ body{
 			}
 		}
 	}
+	.dev__bg-form{
+		background-image: url('../images/form-bg.png');
+		background-size: contain;
+		min-height: 270px;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		@media (max-width: $screen-sm-max){
+			display: none;
+		}
+	}
 }
 .login{
 	padding-bottom: 30px;
+	@media (max-width: $screen-sm-max){
+		padding-bottom: 0;
+	}
 	::-webkit-input-placeholder {
 		color:#6f6f6f;
 		font-size: 18px;
@@ -244,13 +257,13 @@ body{
 
 	.feedback{
 		position: absolute;
-		bottom: -70px;
+		bottom: -5px;
 		width: 100%;
 		text-align: center;
 		color: #fff;
 		background: #2ecc71;
 		padding: 10px 0;
-		font-size: 12px;
+		font-size: 14px;
 		display: none;
 		opacity: 0;
 
@@ -487,8 +500,57 @@ body{
 
 
 
+// 
+div.tabs {
+background: #333;
+padding: 1em;
+}
 
 
+
+ul.tabNavigation {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+ul.tabNavigation li {
+display: inline;
+}
+
+ul.tabNavigation li a {
+padding: 3px 9px;
+background-color: #666;
+color: #000;
+text-decoration: none;
+}
+
+ul.tabNavigation li a.selected,
+ul.tabNavigation li a.selected:hover {
+background: #FFF;
+color: #000;
+}
+
+ul.tabNavigation li a:hover {
+background: #ccc;
+color: #000;
+}
+
+ul.tabNavigation li a:focus {
+outline: 0;
+}
+
+div.tabs div {
+padding: 5px;
+margin-top: 3px;
+border: 1px solid #FFF;
+background: #FFF;
+}
+
+div.tabs div h2 {
+margin-top: 0;
+}
+// 
 
 
 

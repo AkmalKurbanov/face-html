@@ -1,6 +1,9 @@
 .footer{
 	background-color: rgb(9, 32, 51);
-	padding-bottom: 7px;
+	padding-bottom: 4px;
+	@media screen and (max-width: 1199px){
+		padding-top: 20px;
+	}
 	&__logo{
 		min-height: 90px;
 		display: -webkit-flex;
@@ -11,11 +14,20 @@
 		justify-content: center;
 		flex-direction: column;
 		align-items: flex-end;
+		@media screen and (max-width: 1199px){
+			min-height: 0;
+		}
+		@media (max-width: $screen-sm-max){
+			padding-bottom: 20px;
+		}
 		a{
 			display: block;
-			max-width: 90px;
+			max-width: 110px;
 			width: 100%;	
 			margin: 0 auto;
+			@media screen and (max-width: 1199px){
+				max-width: 90px;
+			}
 		}
 		img{
 			width: 100%;
@@ -57,7 +69,9 @@
 					color: #fff;
 					font-size: 20px;
 					transition: all .5s;
-					font-size: 16px;
+					@media screen and (max-width: 1199px){
+						font-size: 16px;
+					}
 					&:hover{
 						color: #ffca1c;
 					}
@@ -67,9 +81,6 @@
 	}
 	&__contacts-block{
 		padding-top: 35px;
-		@media screen and (max-width: 1200px){
-			padding-top: 35px;			
-		}
 		@media (max-width: $screen-md-max){
 			text-align: center;
 			padding-top: 15px;
@@ -138,13 +149,12 @@
 			text-align: center;	
 		}
 		p{
-			font-size: 16px;
+			font-size: 14px;
 			color: #a0a0a0;
 			margin: 0;
 			padding-top: 5px;
 			@media (max-width: $screen-xs-max){
-				text-align: center;	
-				font-size: 14px;
+				text-align: center;					
 			}
 		}
 	}

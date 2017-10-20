@@ -60,104 +60,75 @@
 		@media (max-width: $screen-xs-max){
 			margin-bottom: 20px;
 		}
-		.dropdown {
-			max-width: 100%;
+		$background: #eff1f5;
+		$select-color: #092033;
+		$select-background: #eff1f5;
+		$select-width: 100%;
+		$select-height: 50px; 
+		.select-hidden {
+			display: none;
+			visibility: hidden;
+			padding-right: 10px;
+		}
+		.select {
+			cursor: pointer;
+			display: inline-block;
 			position: relative;
-			&.active {
-				.selLabel { 
-					&:after {
-						content: "\f106";
-						font-family: "FontAwesome"					
-					}
-				}
-				.dropdown-list {
-					li {
-						&:nth-child(1) {
-							transform: translateY(100%);
-							z-index: 1;
-						}
-						&:nth-child(2) {
-							transform: translateY(200%);
-							z-index: 1;
-						}
-						&:nth-child(3) {
-							transform: translateY(300%);
-							z-index: 1;
-						}
-						&:nth-child(4) {
-							transform: translateY(400%);
-							z-index: 1;
-						}
-					}
-				}
-			}
-			> span {
-				width: 100%;
-				min-height: 50px;
-				line-height: 50px;
-				color: #092033;
+			font-size: 20px;
+			color: $select-color;
+			width: $select-width;
+			height: $select-height;
+		}
+		.select-styled {
+			position: absolute; 
+			top: 1px;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: $select-background;
+			padding: 8px 15px;
+			@include transition(all 0.2s ease-in);
+			&:after {
+				content: "\f107";
+				font-family: "FontAwesome";
+				width: 0;
+				height: 0;
+				border-color: $select-color transparent transparent transparent;
+				position: absolute;
+				top: 10px;
+				right: 30px;
 				font-size: 20px;
-				background: #eff1f5;
-				display: block;
-				position: relative;
-				padding-left: 20px;
-				z-index: 9999;
-				cursor: pointer;
-				transform-style: preserve-3d;
-				transform-origin: 50% 0%;
-				transition: transform 300ms;
-				-webkit-backface-visibility: hidden;
-				-webkit-touch-callout: none;
-				user-select: none;
-
+			}
+			&:active, &.active {
 				&:after {
-					content: "\f107";
-					font-family: "FontAwesome";
-					position: absolute;
-					right: 0px;
-					top: 6%;
-					width: 50px;
-					text-align: center;
-					font-size: 20px;
-					padding: 10px;
-					line-height: 24px;
-				}
-				&:active {
-					transform: rotateX(45deg);
-					&:after {
-						content: "\f107";
-					}
+					content: "\f106";
 				}
 			}
 		}
-		.dropdown-list {
+
+		.select-options {
+			display: none; 
 			position: absolute;
-			top: 0px;
-			width: 100%;
+			top: 100%;
+			right: 0;
+			left: 0;
+			z-index: 999;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			background-color: darken($select-background, 5);
 			li {
-				min-height: 50px;
-				display: block;
-				list-style: none;
-				left: 0;
-				opacity: 1;
-				transition: transform 300ms ease;
-				position: absolute;
-				top: 1px;
-				width: 100%;
-				background-color: #eff1f5;
-				border-bottom: 1px solid #c0c1c4;
-				span {
-					-webkit-backface-visibility: hidden;
-					-webkit-touch-callout: none;
-					user-select: none;
-					color: #092033;
-					width: 100%;
-					font-size: 18px;
-					line-height: 50px;
-					padding: 0 5px;
-					display: block;
-					cursor: pointer;
-					padding-left: 20px;
+				margin: 0;
+				padding: 12px 0;
+				text-indent: 15px;
+				border-top: 1px solid darken($select-background, 10);
+				@include transition(all 0.15s ease-in);
+				&:hover {
+					color: $select-background;
+					background: $select-color;
+				}
+				&[rel="hide"] {
+					display: none;
 				}
 			}
 		}

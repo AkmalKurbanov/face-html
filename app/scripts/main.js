@@ -2,14 +2,51 @@
 
 $(document).ready(function () {
 
+// 
+var tabContainers = $('div.tabs > div'); // получаем массив контейнеров
+    tabContainers.hide().filter(':first').show(); // прячем все, кроме первого
+    // далее обрабатывается клик по вкладке
+    $('div.tabs ul.tabNavigation a').click(function () {
+        tabContainers.hide(); // прячем все табы
+        tabContainers.filter(this.hash).show(); // показываем содержимое текущего
+        $('div.tabs ul.tabNavigation a').removeClass('selected'); // у всех убираем класс 'selected'
+        $(this).addClass('selected'); // текушей вкладке добавляем класс 'selected'
+        return false;
+    }).filter(':first').click();
+// 
+
+
 // scroll
- $("a.ancLinks").click(function () { 
-      var elementClick = $(this).attr("href");
-      var destination = $(elementClick).offset().top;
-      $('html,body').animate( { scrollTop: destination }, 1100 );
-      return false;
-    });
+$('a[href^="#"]').click(function(){
+  var target = $(this).attr('href');
+$('html, body').animate({scrollTop: $(target).offset().top}, 2000);//800 - длительность скроллинга в мс
+return false; 
+});  
 // scroll
+
+// rating stars
+var $star_rating = $('.star-rating .fa');
+
+var SetRatingStar = function() {
+  return $star_rating.each(function() {
+    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+      return $(this).removeClass('fa-star-o').addClass('fa-star');
+    } else {
+      return $(this).removeClass('fa-star').addClass('fa-star-o');
+    }
+  });
+};
+
+$star_rating.on('click', function() {
+  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+  return SetRatingStar();
+});
+
+SetRatingStar();
+$(document).ready(function() {
+
+});
+// rating stars
 
  //E-mail Ajax Send
  $('form').submit(function() {
@@ -18,16 +55,17 @@ $(document).ready(function () {
     type: "POST",
     url: "mail.php",
     data: th.serialize()
-  }).done(function() {
-    $.magnificPopup.open({
-      items: {
-        src: '#submite',
-        type: 'inline'
-      },
-      midClick: true,
-      closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>'
-    });
-  });
+  })
+  // .done(function() {
+  //   $.magnificPopup.open({
+  //     items: {
+  //       src: '#submite',
+  //       type: 'inline'
+  //     },
+  //     midClick: true,
+  //     closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>'
+  //   });
+  // });
   return false;
 });
 
@@ -62,7 +100,17 @@ $('.js-slider').owlCarousel({
   items: 1,
   mouseDrag: true,
   navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+  autoplay:true,
+  autoplayTimeout:4000,
+  autoplayHoverPause:true,
+});
+$('.play').on('click',function(){
+  owl.trigger('play.owl.autoplay',[1000])
 })
+$('.stop').on('click',function(){
+  owl.trigger('stop.owl.autoplay')
+})
+
 
 $('.js-slider-second').owlCarousel({
   loop: true,
@@ -114,45 +162,79 @@ $( ".input" ).focusout(function() {
 
 $(".login").submit(function(){
   $(this).find(".submit i").removeAttr('class').addClass("fa fa-check").css({"color":"#fff"});
-  $(".submit").css({"background":"#2ecc71", "border-color":"#2ecc71"});
-  $(".feedback").show().animate({"opacity":"1", "bottom":"-80px"}, 400);
+  $("form .submit").css({"background":"#2ecc71", "border-color":"#2ecc71"});
+  $(".feedback").show().animate({"opacity":"1", "bottom":" -5px"}, 400);
   $("input").css({"border-color":"#2ecc71"});
   return false;
 });
 // form animation
 
-// masonry
-jQuery(document).ready(function($) {
-  $('.elements-gride').masonry({
-        // options
-        itemSelector: '.element-item',
-        columnWidth: 3000
-      });
-});
-// masonry
-
-
-
-
-
-
 // drop down
-$(document).ready(function() {
+// $(document).ready(function() {
 
-  $(".selLabel").click(function () {
-    $('.dropdown').toggleClass('active');
-  });
+//   $(".selLabel").click(function () {
+//     $('.dropdown').toggleClass('active');
+//   });
   
-  $(".dropdown-list li").click(function() {
-    $('.selLabel').text($(this).text());
-    $('.dropdown').removeClass('active');
-    $('.selected-item p span').text($('.selLabel').text());
-  });
+//   $(".dropdown-list li").click(function() {
+//     $('.selLabel').text($(this).text());
+//     $('.dropdown').removeClass('active');
+//     $('.selected-item p span').text($('.selLabel').text());
+//   });
   
+// });
+/*
+Reference: http://jsfiddle.net/BB3JK/47/
+*/
+
+$('select').each(function(){
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  
+    $this.addClass('select-hidden'); 
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+  
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+  
+    for (var i = 0; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+  
+    var $listItems = $list.children('li');
+  
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').not(this).each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+        });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
+    });
+  
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        //console.log($this.val());
+    });
+  
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+    });
+
 });
 // drop down
 
-
+// form
 const labels = document.querySelectorAll('label');
 const getInput = val => document.getElementById(`star_${val}`);
 
@@ -174,6 +256,7 @@ labels.forEach(label => {
     targetInput.checked = true;
   })
 })
+// form
 
 
 
@@ -297,31 +380,35 @@ if (Modernizr.mq('(max-width: 767px)')) {
 });
 // mmenu
 
+// masonry
+$('.elements-gride').masonry({
+        // options
+        itemSelector: '.element-item',
+        columnWidth: 3000
+      });
+// masonry
 
 
 
 
-var $star_rating = $('.star-rating .fa');
 
-var SetRatingStar = function() {
-  return $star_rating.each(function() {
-    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
-      return $(this).removeClass('fa-star-o').addClass('fa-star');
-    } else {
-      return $(this).removeClass('fa-star').addClass('fa-star-o');
-    }
-  });
-};
 
-$star_rating.on('click', function() {
-  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
-  return SetRatingStar();
-});
 
-SetRatingStar();
-$(document).ready(function() {
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
