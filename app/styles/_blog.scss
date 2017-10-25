@@ -114,15 +114,19 @@
 			left: 0;
 			z-index: 999;
 			margin: 0;
-			padding: 0;
+			padding: 0 0 30px 0;
 			list-style: none;
-			background-color: darken($select-background, 5);
+			background-color: #eff1f5;
+			margin-top: 3px;
+			box-shadow: 0px 23px 24px 0px rgba(0, 0, 0, 0.11);
 			li {
 				margin: 0;
-				padding: 12px 0;
+				padding: 12px 0 12px 7px;
 				text-indent: 15px;
-				border-top: 1px solid darken($select-background, 10);
 				@include transition(all 0.15s ease-in);
+				@media screen and (max-width: 1200px){
+					padding-left: 0;
+				}
 				&:hover {
 					color: $select-background;
 					background: $select-color;

@@ -5,6 +5,9 @@
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
+	&__all-wrap{
+		padding-top: 15px;
+	}
 	&__block{
 		background-color: #eff1f5;	
 		width: 282.2px;
@@ -203,7 +206,7 @@
 		p{
 			margin: 0;
 			font-size: 20px;
-			font-weight: 500;
+			font-family: 'ProximaNova';
 			@media screen and (max-width: 1200px){
 				font-size: 16px;
 				font-weight: 500;

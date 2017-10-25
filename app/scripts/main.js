@@ -2,6 +2,13 @@
 
 $(document).ready(function () {
 
+
+// 
+
+// 
+
+
+
 // 
 var tabContainers = $('div.tabs > div'); // получаем массив контейнеров
     tabContainers.hide().filter(':first').show(); // прячем все, кроме первого
@@ -291,7 +298,7 @@ API.bind('close:start', function ($panel) {
   $('.js-navtrigger').toggleClass('-active');
 });
 
-if (Modernizr.mq('(max-width: 992px)')) {
+if (Modernizr.mq('(max-width: 1199px)')) {
   $('a.-pagescroll[href*="#"]:not([href="#"])').click(function () {
     API.close();
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

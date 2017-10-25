@@ -1,18 +1,35 @@
 @font-face {
-	font-family: 'ProximaNovaRegular';
-	src: url('../fonts/ProximaNovaRegular/ProximaNovaRegular.eot'),
-	url('../fonts/ProximaNovaRegular/ProximaNovaRegular.woff') format('woff'), 
-	url('../fonts/ProximaNovaRegular/ProximaNovaRegular.ttf') format('truetype'), 
-	url('../fonts/ProximaNovaRegular/ProximaNovaRegular.eot?#iefix') format('embedded-opentype');
+	font-family: 'ProximaNova';
+	src: url('../fonts/ProximaNova-Regular/ProximaNova-Regular.eot'), url('../fonts/ProximaNova-Regular/ProximaNova-Regular.woff') format('woff'), url('../fonts/ProximaNova-Regular/ProximaNova-Regular.ttf') format('truetype'), url('../fonts/ProximaNova-Regular/ProximaNova-Regular.eot?#iefix') format('embedded-opentype');
 	font-weight: 400;
 	font-style: normal;
 }
-
-
-
-
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src: url('../fonts/ProximaNova-Light/ProximaNova-Light.eot'), url('../fonts/ProximaNova-Light/ProximaNova-Light.woff') format('woff'), url('../fonts/ProximaNova-Light/ProximaNova-Light.ttf') format('truetype'), url('../fonts/ProximaNova-Light/ProximaNova-Light.eot?#iefix') format('embedded-opentype');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ProximaNovaT-Thin';
+	src: url('../fonts/ProximaNovaT-Thin/ProximaNovaT-Thin.eot'), url('../fonts/ProximaNovaT-Thin/ProximaNovaT-Thin.woff') format('woff'), url('../fonts/ProximaNovaT-Thin/ProximaNovaT-Thin.ttf') format('truetype'), url('../fonts/ProximaNovaT-Thin/ProximaNovaT-Thin.eot?#iefix') format('embedded-opentype');
+	font-weight: 100;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ProximaNova-Semibold';
+	src: url('../fonts/ProximaNova-Semibold/ProximaNova-Semibold.eot'), url('../fonts/ProximaNova-Semibold/ProximaNova-Semibold.woff') format('woff'), url('../fonts/ProximaNova-Semibold/ProximaNova-Semibold.ttf') format('truetype'), url('../fonts/ProximaNova-Semibold/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'ProximaNova-Bold';
+	src: url('../fonts/ProximaNova-Bold/ProximaNova-Bold.eot'), url('../fonts/ProximaNova-Bold/ProximaNova-Bold.woff') format('woff'), url('../fonts/ProximaNova-Bold/ProximaNova-Bold.ttf') format('truetype'), url('../fonts/ProximaNova-Bold/ProximaNova-Bold.eot?#iefix') format('embedded-opentype');
+	font-weight: 700;
+	font-style: normal;
+}
 body{
-	font-family: 'ProximaNovaRegular';
+	font-family: 'ProximaNova-Light';
 }
 .index-wrap{
 	background-image: url('../images/index_bg.png');
@@ -43,7 +60,7 @@ body{
 		font-size: 30px;
 		margin: 0;
 		padding: 0;
-		font-weight: 700;
+		font-family: 'ProximaNova-Semibold';
 		@media (max-width: $screen-xs-max){
 			font-size: 25px;
 		}
@@ -156,6 +173,9 @@ body{
 		@media (max-width: $screen-sm-max){
 			display: none;
 		}
+	}
+	.connection__form-place{
+		padding-top: 30px;
 	}
 }
 .login{
@@ -502,53 +522,53 @@ body{
 
 // 
 div.tabs {
-background: #333;
-padding: 1em;
+	background: #333;
+	padding: 1em;
 }
 
 
 
 ul.tabNavigation {
-list-style: none;
-margin: 0;
-padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 ul.tabNavigation li {
-display: inline;
+	display: inline;
 }
 
 ul.tabNavigation li a {
-padding: 3px 9px;
-background-color: #666;
-color: #000;
-text-decoration: none;
+	padding: 3px 9px;
+	background-color: #666;
+	color: #000;
+	text-decoration: none;
 }
 
 ul.tabNavigation li a.selected,
 ul.tabNavigation li a.selected:hover {
-background: #FFF;
-color: #000;
+	background: #FFF;
+	color: #000;
 }
 
 ul.tabNavigation li a:hover {
-background: #ccc;
-color: #000;
+	background: #ccc;
+	color: #000;
 }
 
 ul.tabNavigation li a:focus {
-outline: 0;
+	outline: 0;
 }
 
 div.tabs div {
-padding: 5px;
-margin-top: 3px;
-border: 1px solid #FFF;
-background: #FFF;
+	padding: 5px;
+	margin-top: 3px;
+	border: 1px solid #FFF;
+	background: #FFF;
 }
 
 div.tabs div h2 {
-margin-top: 0;
+	margin-top: 0;
 }
 // 
 
