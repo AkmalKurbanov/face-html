@@ -1,6 +1,15 @@
 .connection{
-	padding-top: 40px;
+	padding-top: 55px;
+	.caption-wrap{
+		padding-bottom: 13px;
+	}
+	.connection__form-block{
+		padding-top: 20px;
+	}
 	@media (max-width: $screen-sm-max){
 		padding-bottom: 20px;
 	}	
+	@media (max-width: $screen-xs-max){
+		padding-top: 0;
+	}
 }

@@ -186,13 +186,14 @@
 		@media (max-width: $screen-sm-max){
 			padding: 0;
 			display: block;
+			padding-left: 15px;
 		}
 		a{
 			font-size: 20px;
 			text-decoration: none;
 			font-family: 'ProximaNova';
 			position: relative;
-			color: #000;
+			color: #000;		
 			i{
 				padding-right: 15px;
 				color: #000;
@@ -205,9 +206,17 @@
 					left: -15px;
 					font-size: 21px;
 				}
+				@media (max-width: $screen-sm-max){
+					font-size: 23px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
 			}
 			@media screen and (max-width: 1200px){
 				font-size: 16px;
+			}
+			@media (max-width: $screen-sm-max){
+				font-size: 25px;
 			}
 		}
 	}
@@ -236,7 +245,8 @@
 					opacity: .6;
 				}
 				@media (max-width: $screen-xs-max){
-					display: none;
+					font-size: 30px;
+					left: 10px;
 				}
 			}
 			.owl-next{
@@ -250,7 +260,8 @@
 					opacity: .6;
 				}
 				@media (max-width: $screen-xs-max){
-					display: none;
+					font-size: 30px;
+					right: 10px;
 				}
 			}
 		}
@@ -309,6 +320,9 @@
 			position: relative;
 			@media (max-width: $screen-sm-max){
 				min-height: 300px;
+			}
+			@media (max-width: $screen-xs-max){
+				text-align: center;
 			}
 			ul{
 				margin: 0;

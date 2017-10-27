@@ -1,10 +1,13 @@
 .steps{
-	padding-top: 70px;
+	padding-top: 80px;
 	.caption-wrap{
-		margin: 0;
+		padding-bottom: 15px;
+		.caption{
+			line-height: 35px;
+		}
 	}
 	&__etap-wrap{
-		padding-top: 35px;
+		padding-top: 25px;
 		@media (max-width: $screen-md-max){
 			display: inline-block;
 			vertical-align: top;
@@ -36,6 +39,7 @@
 		p{
 			margin: 0;
 			font-size: 19px;
+			font-family: 'ProximaNova';
 			@media screen and (max-width: 1200px){
 				font-size: 16px;
 			}
@@ -63,6 +67,7 @@
 		background-color: #eff1f5;
 		i{
 			font-size: 80px;
+			color: #092033;
 		}
 	}
 }

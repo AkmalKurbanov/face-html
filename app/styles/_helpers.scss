@@ -35,9 +35,12 @@ body{
 	background-image: url('../images/index_bg.png');
 	background-repeat: no-repeat;
 	background-position: bottom left;
+	@media screen and (min-width: 1600px) and (max-width: 1630px){
+		background-image: url('../images/index_bg-mini.png');
+	} 
 	@media screen and (max-width: 1599px){
 		background-image: none;
-	}
+	}	
 }
 .no-padding{
 	padding: 0;
@@ -109,6 +112,7 @@ body{
 		font-size: 19px;
 		margin: 0;
 		padding-bottom: 15px;
+		font-family: 'ProximaNova';
 		@media (max-width: $screen-xs-max){
 			font-size: 16px;
 		}
@@ -204,29 +208,28 @@ body{
 		width: 100%;
 		margin: 10px auto;
 		.fa-mobile{
-			font-size: 35px;
+			font-size: 23px;
 		}
 		span{
 			position: absolute;
 			display: block;
-			color: darken(#6f6f6f, 10%);
-			left: 10px;
-			top: 5px;
-			font-size: 23px;
+			color: #6f6f6f;
+			top: 10px;
+			font-size: 17px;
 		}
 
 		input, 
 		textarea{
 			width: 100%;
-			padding: 7px 5px 10px 42px;
+			padding: 7px 5px 10px 25px;
 			display: block;
 			border: none;
 			border-bottom: 1px solid #c0c1c4;
 			transition: 0.5s ease-out;
-			color: darken(#6f6f6f, 50%);
+			color: #6f6f6f;
 			font-size: 20px;
 			&:focus{
-				padding: 10px 5px 10px 10px;
+				padding: 7px 5px 10px 10px;
 				outline: 0;
 				border-color: #092033;
 			}
@@ -249,12 +252,11 @@ body{
 		color: #092033;
 		margin-top: 20px;
 		box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );
-
 		-webkit-transform: translateZ(0);
 		-moz-transform: translateZ(0);
 		-ms-transform: translateZ(0);
 		transform: translateZ(0);
-
+		text-transform: uppercase;
 		-webkit-transition: all 0.5s ease;
 		-moz-transition: all 0.5s ease;
 		-ms-transition: all 0.5s ease;
@@ -308,6 +310,7 @@ body{
 		font-size: 14px;
 		color: #6f6f6f;
 		text-decoration: underline;
+		text-decoration-color: #ccc;
 		transition: all .5s;
 		&:hover{
 			color: #092033;
@@ -334,7 +337,7 @@ body{
 	-moz-transform: translateZ(0);
 	-ms-transform: translateZ(0);
 	transform: translateZ(0);
-
+	font-family: 'ProximaNova';
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-ms-transition: all 0.5s ease;

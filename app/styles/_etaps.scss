@@ -3,6 +3,9 @@
 	@media (max-width: $screen-xs-max){
 		padding-top: 30px;
 	}
+	.caption-wrap{
+		padding-bottom: 20px;
+	}
 	h1{
 		font-size: 145px;
 		color: #b6b6b6;
@@ -22,9 +25,7 @@
 	&__wrap{
 		position: relative;
 		min-height: 260px;
-		padding-top: 20px;
-		margin-top: 20px;
-		padding-left: 25px;
+		width: 100%;
 		@media (max-width: $screen-sm-max){
 			padding-bottom: 25px;
 		}
@@ -41,8 +42,8 @@
 			position: absolute;
 			content: '';
 			font-family: 'font';
-			font-size: 25px;
-			color: #b6b6b6;
+			font-size: 20px;
+			color: #c0c1c4;
 			top: -15px;
 			@media (max-width: $screen-xs-max){
 				content: '';
@@ -52,8 +53,8 @@
 			position: absolute;
 			content: '';
 			font-family: 'font';
-			font-size: 25px;
-			color: #b6b6b6;
+			font-size: 20px;
+			color: #c0c1c4;
 			top: -15px;
 			right: 0;
 			@media (max-width: $screen-xs-max){
@@ -72,12 +73,12 @@
 		}
 	}
 	&__img-wrap{
-		max-width: 220px;
 		width: 100%;
-		min-height: 200px;
-		text-align: center;
+		padding-left: 25px;
+		padding-top: 20px;
 		@media (max-width: $screen-sm-max){
 			margin: 0 auto;
+			padding: 0;
 		}
 		@media (max-width: $screen-xs-max){
 			display: inline-block;
@@ -91,7 +92,7 @@
 	&__desc{
 		padding-top: 25px;
 		@media (max-width: $screen-xs-max){
-			padding-bottom: 25px;
+			padding-bottom: 40px;
 		}
 		h2{			
 			font-size: 25px;
@@ -100,6 +101,7 @@
 			padding-bottom: 25px;
 			text-transform: uppercase;
 			font-weight: 500;
+			font-family: 'ProximaNova';
 			@media (max-width: $screen-xs-max){
 				padding-bottom: 15px;
 			}
@@ -119,6 +121,7 @@
 			font-size: 20px;
 			margin: 0;
 			line-height: 25px;
+			font-family: 'ProximaNova';
 			@media (max-width: $screen-xs-max){
 				font-size: 16px;
 			}
