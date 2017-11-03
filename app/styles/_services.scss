@@ -23,11 +23,11 @@
 		position: relative;
 		&--dev{
 			width: 100%;
-			max-width: 100%;
+			max-width: 100%;			
 		}
 		&::before,
 		&:after {
-			background-color: #243849;	
+			background-color: #092033;	
 			content: '';
 			position: absolute;			
 		}
@@ -52,15 +52,9 @@
 				}		
 				span{
 					color: #fff;
-					@media (max-width: $screen-sm-max){
-						color: #000;
-					}
 				}		
 				h2{
 					color: #fff;
-					@media (max-width: $screen-sm-max){
-						color: #000;
-					}
 				}
 			}
 			&:after {
@@ -70,13 +64,12 @@
 				width: 100%;
 			}					
 		}
-		@media screen and (max-width: 1200px){
-			padding-left: 10px;
-		}
+		
+
 		@media (max-width: $screen-md-max) { 
 			width: 100%;
 			max-width: 100%;
-			padding-left: 30px;
+			padding-left: 10px;
 		}
 		@media (max-width: $screen-xs-max){
 			padding-left: 0;
@@ -84,8 +77,6 @@
 			width: 100%;
 			max-width: 100%;
 			min-height: 100px;
-			margin-bottom: 0;
-			border-bottom: 1px solid #c0c1c4;			
 		}		
 	}
 	&__img-wrap{
@@ -182,6 +173,10 @@
 		.icon-serv16{
 			margin-left: -15px;
 		}
+		img{
+			width: 65%;
+			max-width: 65%;
+		}
 	}
 	&__block-wrap{
 		transition: all .3s;
@@ -191,16 +186,20 @@
 		}
 		&:focus{
 			color: #000;
+			text-decoration: none;
 		}
 		@media (max-width: $screen-md-max) { 
 			text-align: center;
 			width: 100%;
 			display: block;
-		}
+		}	
 		@media (max-width: $screen-xs-max){
 			text-align: left;
+			margin-bottom: 15px;
 		}
 	}
+
+
 	&__img-desc{
 		text-align: left;
 		p{
@@ -220,10 +219,10 @@
 			}
 			@media (max-width: $screen-xs-max) { 
 				font-size: 16px;
-				padding-left: 90px;
+				padding-left: 80px;
 				br{
 					display: none;
-				}
+				}				
 			}
 		}
 	}

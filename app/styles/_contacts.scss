@@ -1,6 +1,28 @@
 .contacts{
 	min-height: 100vh;
 	padding-top: 35px;
+	.caption-wrap{
+		margin-bottom: 35px;
+	}
+
+
+	.login{
+		@media (max-width: $screen-sm-max){
+			padding-bottom: 25px;
+		}
+		@media (max-width: $screen-xs-max){
+			padding-bottom: 5px;
+		}
+		.input{
+			margin: 2px auto;
+		}
+	}
+	.submit{
+		@media (max-width: $screen-sm-max){
+			margin-top: 20px;
+		}
+	}
+
 	&__map {
 		margin-top: 40px;
 		width: 100%;

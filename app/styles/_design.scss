@@ -1,0 +1,140 @@
+.design{
+	padding-top: 34px;
+	padding-bottom: 20px;
+	@media (max-width: $screen-xs-max){
+		padding-bottom: 30px;
+	}
+	.caption-wrap{
+		h2{
+			font-size: 30px;
+			font-family: 'ProximaNova';
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+	p{
+		color: #000;
+	}
+	h2{
+		color: #000;
+	}
+	.service__send{
+		padding-bottom: 10px;
+		border-bottom: none;
+		p{
+			padding-bottom: 15px;
+		}
+	}
+	h2{
+		font-size: 25px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #c0c1c4;
+		margin: 0;
+		color: #000;
+		font-family: 'ProximaNova-Semibold';
+	}
+	&__serv-design{
+		padding-top: 30px;
+		padding-bottom: 50px;
+		text-align: center;
+		@media (max-width: $screen-md-max){
+			padding-top: 0;
+		}
+	}
+	&__serv-content{
+		padding-bottom: 53px;
+		@media (max-width: $screen-md-max){
+			padding-bottom: 0;
+		}
+		&:last-child{
+			padding-bottom: 0;
+		}
+	}
+	&__serv-items{
+		@media (max-width: $screen-md-max){
+			padding-top: 40px;
+		}
+	}
+	&__img-wrap{
+		max-width: 100px;
+		width: 100%;
+		margin: 0 auto;
+		padding-bottom: 25px; 
+		min-height: 112px;
+		img{
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+	&__serv-caption{
+		min-height: 40px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		p{
+			margin: 0;
+			font-size: 20px;
+			font-family: 'ProximaNova';
+			line-height: 24px;
+			color: #000;	
+		}
+	}
+	&__serv-price{
+		padding-top: 15px;
+		p{
+			font-size: 20px;
+			font-family: 'ProximaNova';
+			margin: 0;
+			span{
+				font-size: 20px;
+				font-family: 'ProximaNova-Semibold';
+				i{
+					font-size: 20px;
+					font-weight: bold;
+					padding-right: 17px;
+				}
+			}
+		}	
+	}
+	&__serv-desc{
+		max-width: 280px;
+		margin: 0 auto;
+		padding-top: 20px;
+		height: 120px;
+		overflow: hidden;
+		p{
+			font-size: 18px;
+			font-family: 'ProximaNova';
+			margin: 0;
+			color: #000;
+		}
+	}
+	&__serv-submit{
+		padding-top: 35px;
+		.submit{
+			display: block;
+			text-decoration: none;
+			font-size: 20px;
+			min-height: 40px;
+			line-height: 40px;
+			max-width: 205px;
+			margin: 0 auto;
+			white-space: nowrap;
+		}
+	}
+	.dev__desc{
+		border-bottom: 1px solid #c0c1c4;
+		margin-bottom: 10px;
+		padding-top: 25px;
+		padding-bottom: 5px;
+		p{
+			padding-bottom: 21px;
+		}
+	}
+	.connection__form-block{
+		.submit{
+			max-width: 295px;
+		}
+	}
+}

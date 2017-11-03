@@ -1,26 +1,39 @@
 .blog1{
+	.caption-wrap{
+		ul{
+			padding-top: 27px;
+		}
+		h1{
+			font-size: 35px;
+			padding-bottom: 5px;
+		}
+	}
 	&__determination{		
 		p{
 			font-size: 18px;
 			line-height: 27px;
 			padding-bottom: 25px;
 			margin: 0;
+			font-family: 'ProximaNova';	
 			@media (max-width: $screen-xs-max){
 				font-size: 16px;
 				line-height: 22px;
-				padding-bottom: 15px;
+				padding-bottom: 30px;
+			}
+		}
+		h2{
+			font-size: 18px;
+			font-weight: 600;
+			margin: 0;
+			padding-bottom: 20px;
+			font-family: 'ProximaNova';	
+			color: #000;
+			@media (max-width: $screen-xs-max){
+				padding-bottom: 10px;
 			}
 		}
 	}
-	&__caption{
-		font-size: 18px;
-		font-weight: 600;
-		margin: 0;
-		padding-bottom: 20px;
-		@media (max-width: $screen-xs-max){
-			padding-bottom: 10px;
-		}
-	}
+
 	&__img-wrap{
 		width: 100%;
 		max-width: 800px;
@@ -55,14 +68,19 @@
 			font-weight: 600;
 			padding-right: 10px;
 			margin: 0;
+			font-family: 'ProximaNova';
+			color: #000;
 		}
 		p{
 			padding-left: 10px;
 			display: inline-block;
 			font-size: 18px;
 			margin: 0;
+			font-family: 'ProximaNova';
+			color: #000;
 			span{
-				font-weight: 600;
+				font-family: 'ProximaNova-Semibold';
+				color: #000;
 			}
 		}
 		.star-rating {
@@ -86,6 +104,10 @@
 			display: block;
 			padding-bottom: 5px;
 			padding-left: 0;
+			color: #000;
+			@media (max-width: $screen-md-max){
+				font-size: 17px;
+			}
 			&:last-child{
 				padding: 0;
 			}
@@ -96,6 +118,10 @@
 		ul{
 			margin: 0;
 			padding: 0;
+			@media (max-width: $screen-md-max){
+				padding-top: 25px;
+				text-align: center;
+			}
 			@media (max-width: $screen-xs-max){
 				padding-top: 15px;
 				text-align: center;
@@ -148,13 +174,25 @@
 		border-bottom: 1px solid #c0c1c4;
 		color: #000;
 		padding-top: 25px;
+		h3{
+			font-size: 18px;
+			font-weight: 600;
+			margin: 0;
+			padding-bottom: 20px;
+			font-family: 'ProximaNova';	
+			color: #000;
+			@media (max-width: $screen-xs-max){
+				padding-bottom: 10px;
+			}
+		}
 	}
 	&__name{
 		h2{
 			font-size: 18px;
 			padding-bottom: 15px;
 			margin: 0;
-			font-weight: 600;
+			font-family: 'ProximaNova';
+			color: #000;
 			@media (max-width: $screen-xs-max){
 				padding-top: 15px;
 			}
@@ -173,6 +211,7 @@
 			font-size: 18px;
 			line-height: 27px;
 			margin: 0;
+			font-family: 'ProximaNova';
 			@media (max-width: $screen-xs-max){
 				font-size: 16px;
 				br{
@@ -183,11 +222,13 @@
 	}
 	&__slide{
 		padding-bottom: 30px;
-		h2{
+		h3{
 			font-size: 20px;
 			font-weight: 600;
 			margin: 0;
 			padding: 25px 0;
+			font-family: 'ProximaNova';
+			color: #000;
 		}				
 	}	
 
@@ -197,13 +238,14 @@
 			text-decoration: none;
 			font-size: 20px;
 			color: #c0c1c4;
+			transition: all .5s;
 			&:hover{
 				color: #000;
-				.blog1__img-wraper{				
+				.blog1__img-wraper{		
 					&:before{
 						position: absolute;
 						content: '';
-						background-color: rgba(0,0,0, 0.8);
+						background-color: rgba(0,0,0, 0.80);
 						top: 0;
 						right: 0;
 						bottom: 0;

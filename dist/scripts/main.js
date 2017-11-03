@@ -377,13 +377,14 @@ $(document).ready(function () {
     ymaps.ready(_init);
     ;
   }
-});
-// mmenu
 
-// masonry
-$('.elements-gride').masonry({
-  // options
-  itemSelector: '.element-item',
-  columnWidth: 3000
+  // mmenu
+
+  // masonry
+  $('.elements-gride').masonry({
+    // options
+    itemSelector: '.element-item',
+    columnWidth: 3000
+  });
+  // masonry
 });
-// masonry

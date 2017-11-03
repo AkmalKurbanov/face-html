@@ -1,7 +1,7 @@
 .lst-project{
 	.caption-wrap{
-		padding-bottom: 20px;
-		margin-bottom: 40px;
+		padding-bottom: 19px;
+		margin-bottom: 44px;
 	}
 	&__slider{
 		.item{
@@ -26,21 +26,6 @@
 					display: block;
 				}
 			}
-			&:before{
-				position: absolute;
-				content: '';
-				background-image: url('../images/plus2.png');
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background-size: contain;
-				background-repeat: no-repeat;
-				@media (max-width: $screen-md-max) { 
-					display: none;
-				}
-			}
-
 		}	
 		.owl-dots {
 			position: absolute;

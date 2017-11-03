@@ -124,7 +124,7 @@ $('.js-slider-second').owlCarousel({
   margin: 25,
   nav: false,
   items: 3,
-  dots: true,
+  dots: true,  
   responsive:{
     0:{
       items: 1,
@@ -384,7 +384,7 @@ if (Modernizr.mq('(max-width: 767px)')) {
   ymaps.ready(_init);
   ;
 }
-});
+
 // mmenu
 
 // masonry
@@ -395,7 +395,7 @@ $('.elements-gride').masonry({
       });
 // masonry
 
-
+});
 
 
 

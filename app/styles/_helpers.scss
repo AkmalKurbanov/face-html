@@ -59,7 +59,16 @@ body{
 	@media (max-width: $screen-xs-max){
 		margin-bottom: 25px;
 	}
-	.caption{
+	h2{
+		font-size: 30px;
+		margin: 0;
+		padding: 0;
+		font-family: 'ProximaNova-Semibold';
+		@media (max-width: $screen-xs-max){
+			font-size: 25px;
+		}
+	}
+	h1{
 		font-size: 30px;
 		margin: 0;
 		padding: 0;
@@ -117,13 +126,16 @@ body{
 			font-size: 16px;
 		}
 	}
-	h2{
+	.information{
 		margin: 0;
-		padding-bottom: 15px;
+		padding-bottom: 5px;
 		a{
 			text-decoration: none;
 			color: #000;
 			transition: all .5s;
+			font-family: 'ProximaNova';
+			font-weight: 400;
+			font-size: 30px;
 			&:hover{
 				color: #6f6f6f;
 			}
@@ -133,12 +145,16 @@ body{
 		margin: 0;
 		padding: 0;
 		padding-top: 10px;
+		@media (max-width: $screen-xs-max){
+			padding-bottom: 30px;
+		}
 		li{
 			list-style-type: none;
 			font-size: 20px;
 			padding-bottom: 15px;
 			position: relative;
 			margin-left: 25px;
+			font-family: 'ProximaNova';
 			@media (max-width: $screen-xs-max){
 				font-size: 16px;
 			}
@@ -190,6 +206,7 @@ body{
 	::-webkit-input-placeholder {
 		color:#6f6f6f;
 		font-size: 18px;
+		font-family: 'ProximaNova';
 	}
 	::-moz-placeholder {
 		color:#6f6f6f;
@@ -221,7 +238,7 @@ body{
 		input, 
 		textarea{
 			width: 100%;
-			padding: 7px 5px 10px 25px;
+			padding: 7px 5px 5px 25px;
 			display: block;
 			border: none;
 			border-bottom: 1px solid #c0c1c4;
@@ -229,7 +246,7 @@ body{
 			color: #6f6f6f;
 			font-size: 20px;
 			&:focus{
-				padding: 7px 5px 10px 10px;
+				padding: 7px 5px 5px 10px;
 				outline: 0;
 				border-color: #092033;
 			}
@@ -369,7 +386,7 @@ body{
 	.nav-links {
 		border-top: 1px solid #c0c1c4;
 		padding-top: 20px;
-		padding-bottom: 35px;
+		padding-bottom: 40px;
 		@media (max-width: $screen-xs-max) {
 			text-align: center;
 			padding-top: 15px;
@@ -391,12 +408,22 @@ body{
 			&:last-child{
 				margin-right: 0;
 			}
-			@media (max-width: $screen-xs-max){
-				width: 25px;
-				height: 25px;
-				margin-right: 3px;
-				line-height: 25px;
-				margin-bottom: 5px;
+			@media screen and (min-width: 491px) and (max-width: 570px)  {
+				width: 32px;
+				height: 32px;
+				line-height: 32px;
+			}
+			@media screen and (min-width: 400px) and (max-width: 490px)  {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;	
+				margin-right: 2px;			
+			}
+			@media screen and (min-width: 320px) and (max-width: 399px)  {
+				width: 22px;
+				height: 22px;
+				line-height: 22px;	
+				margin-right: 2px;			
 				font-size: 16px;
 			}
 			&:nth-child(7){
@@ -779,4 +806,7 @@ div.tabs div h2 {
 
 .mm-right.mm-opening .mm-menu.mm-fx-menu-slide {
 	z-index: 999999;
+}
+.mm-listview {
+	font-size: 16px;
 }

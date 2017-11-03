@@ -5,16 +5,18 @@
 	}
 	.caption-wrap{
 		padding-bottom: 20px;
+		margin-bottom: 45px;
 	}
-	h1{
+	.digits{
 		font-size: 145px;
-		color: #b6b6b6;
+		color: #b8b8b8;
 		display: inline-block;
 		padding-top: 25px;
 		float: right;
 		padding-right: 30px;
 		max-width: 100px;
 		width: 100%;
+		font-family: 'ProximaNova';
 		@media screen and (max-width: 1200px){
 			display: none;
 		}
@@ -45,6 +47,7 @@
 			font-size: 20px;
 			color: #c0c1c4;
 			top: -15px;
+			left: 5px;
 			@media (max-width: $screen-xs-max){
 				content: '';
 			}
@@ -56,7 +59,7 @@
 			font-size: 20px;
 			color: #c0c1c4;
 			top: -15px;
-			right: 0;
+			right: 5px;
 			@media (max-width: $screen-xs-max){
 				content: '';
 			}
@@ -84,9 +87,13 @@
 			display: inline-block;
 			max-width: 100px;
 			min-height: 100px;
+			padding: 0;
 		}
 		img{
-			max-width: 100%;
+			max-width: 100%;		
+			@media (max-width: $screen-xs-max){
+				padding-left: 0;	
+			}			
 		}	
 	}
 	&__desc{
@@ -94,20 +101,20 @@
 		@media (max-width: $screen-xs-max){
 			padding-bottom: 40px;
 		}
-		h2{			
+		h3{			
 			font-size: 25px;
 			color: #000;
 			margin: 0;
 			padding-bottom: 25px;
 			text-transform: uppercase;
 			font-weight: 500;
-			font-family: 'ProximaNova';
+			font-family: 'ProximaNova-Semibold';
 			@media (max-width: $screen-xs-max){
 				padding-bottom: 15px;
 			}
 			span{
 				font-size: 30px;
-				color: #b6b6b6;
+				color: #b8b8b8;
 				display: none;
 				@media screen and (max-width: 1200px){
 					display: inline-block;
