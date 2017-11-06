@@ -3,13 +3,6 @@
 $(document).ready(function () {
 
 
-// 
-
-// 
-
-
-
-// 
 var tabContainers = $('div.tabs > div'); // получаем массив контейнеров
     tabContainers.hide().filter(':first').show(); // прячем все, кроме первого
     // далее обрабатывается клик по вкладке
@@ -20,7 +13,7 @@ var tabContainers = $('div.tabs > div'); // получаем массив кон
         $(this).addClass('selected'); // текушей вкладке добавляем класс 'selected'
         return false;
     }).filter(':first').click();
-// 
+
 
 
 // scroll

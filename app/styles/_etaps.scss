@@ -3,10 +3,18 @@
 	@media (max-width: $screen-xs-max){
 		padding-top: 30px;
 	}
-	.caption-wrap{
-		padding-bottom: 20px;
-		margin-bottom: 45px;
+	h2{
+		margin: 0;
+		padding-bottom: 19px;
+		border-bottom: 1px solid #c0c1c4;
+		font-family: 'ProximaNova-Semibold';
+		margin-bottom: 40px;
+		@media (max-width: $screen-sm-max){
+			font-size: 25px;
+			margin-bottom: 20px;
+		}
 	}
+
 	.digits{
 		font-size: 145px;
 		color: #b8b8b8;

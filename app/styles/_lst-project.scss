@@ -1,9 +1,19 @@
 .lst-project{
-	.caption-wrap{
+	h2{
+		font-size: 30px;
+		font-family: 'ProximaNova-Semibold';
 		padding-bottom: 19px;
-		margin-bottom: 44px;
+		margin: 0;	
+		border-bottom: 1px solid #c0c1c4;
+		@media (max-width: $screen-sm-max){
+			font-size: 25px;
+		}
 	}
 	&__slider{
+		padding-top: 40px;
+		@media (max-width: $screen-sm-max){
+			padding-top: 20px;
+		}
 		.item{
 			max-width: 100%;
 			min-height: 140px;

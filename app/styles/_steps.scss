@@ -1,13 +1,18 @@
 .steps{
 	padding-top: 80px;
-	.caption-wrap{
+	h2{
+		margin: 0;
 		padding-bottom: 15px;
-		.caption{
-			line-height: 35px;
+		line-height: 35px;
+		border-bottom: 1px solid #c0c1c4;
+		font-family: 'ProximaNova-Semibold';
+					@media (max-width: $screen-sm-max){
+			font-size: 25px;
 		}
 	}
+
 	&__etap-wrap{
-		padding-top: 25px;
+		padding-top: 30px;
 		@media (max-width: $screen-md-max){
 			display: inline-block;
 			vertical-align: top;

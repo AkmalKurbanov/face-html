@@ -1,10 +1,14 @@
 .connection{
 	padding-top: 55px;
-	.caption-wrap{
+	padding-bottom: 25px;
+	h2{
+		margin: 0;
 		padding-bottom: 13px;
-	}
-	.connection__form-block{
-		padding-top: 20px;
+		border-bottom: 1px solid #c0c1c4;
+		font-family: 'ProximaNova-Semibold';
+		@media (max-width: $screen-sm-max){
+			font-size: 25px;
+		}
 	}
 	@media (max-width: $screen-sm-max){
 		padding-bottom: 20px;

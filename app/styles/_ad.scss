@@ -1,0 +1,195 @@
+.ad{
+	padding-top: 35px;
+	padding-bottom: 30px;
+	.caption-wrap{
+		h2{
+			font-family: 'ProximaNova';
+			border-bottom: none;
+			font-size: 30px;
+			padding: 0;
+		}
+		ul{
+			padding-top: 10px;
+		}
+	}	
+	h2{
+		font-size: 25px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #c0c1c4;
+		margin: 0;
+		color: #000;
+		font-family: 'ProximaNova-Semibold';
+	}
+	.dev__desc{
+		padding: 25px 0 25px;
+		border-bottom: none;
+	}
+	.service__send{
+		border-bottom: none;				
+	}
+	&__advantage{
+		padding-top: 37px;
+		padding-bottom: 40px;
+		text-align: center;
+		@media (max-width: $screen-sm-max){
+			padding-bottom: 0;
+		}		
+	}
+	&__img-wrap{
+		padding-bottom: 25px;
+		img{
+			width: 100%;
+			max-width: 85px;
+		}
+	}
+	&__advantage-items{
+		text-align: center;
+		display: inline-block;
+		max-width: 220px;
+		width: 100%;
+		margin: 0 auto;
+		@media (max-width: $screen-md-max){
+			max-width: 185px;
+		}
+		@media (max-width: $screen-sm-max){
+			margin-bottom: 50px;
+		}
+		@media screen and (min-width: 320px) and (max-width: 470px){
+			display: block;
+		}
+		p{
+			font-size: 20px;
+			color: #000;
+			font-family: 'ProximaNova';
+			margin: 0;
+		}
+	}
+	&__main-etaps{
+		padding-top: 30px;	
+		text-align: center;
+	}
+	&__main-etaps-items{
+		padding-bottom: 35px;
+		&:after{
+			position: absolute;
+			content: '';
+			background-image: url('../images/icons/etaps-arrow.png');
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+			left: 250px;
+			top: 55%;
+			transform: translateY(-50%);
+			@media (max-width: $screen-md-max){
+				left: 200px;
+			}
+			@media (max-width: $screen-sm-max){				
+				background-image: none;				
+			}		
+		}					
+		&--bgn{
+			&:after{
+				background-image: none;
+			}		
+		}
+	}
+	&__caption{
+		min-height: 60px;
+		p{
+			font-size: 20px;
+			color: #000;
+			font-family: 'ProximaNova-Semibold';
+			margin: 0;
+		}
+	}
+	&__desc{
+		p{
+			font-size: 18px;
+			color: #000;
+			font-family: 'ProximaNova';
+			margin: 0;
+		}
+	}
+	&__border{
+		border: 1px solid #092033;
+		height: 46px;
+		width: 46px;
+		text-align: center;
+		border-radius: 10em;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 15px;
+
+	}
+	&__content{
+		background-color: #092033;
+		height: 36px;
+		width: 36px;
+		text-align: center;
+		border-radius: 10em;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		p{
+			margin: 0;
+			font-size: 25px;
+			color: #fff;
+			padding: 0;
+			font-family: 'ProximaNova';
+		}
+	}
+	&__result{
+		padding-top: 30px;
+		p{
+			font-size: 20px;
+			font-family: 'ProximaNova';
+			color: #000;
+			margin: 0;
+		}
+		ol{
+			counter-reset: my-counter;
+			list-style: none;
+			padding: 30px 0 20px;
+			margin: 0;
+			li{
+				margin-bottom: 25px;
+				padding-left: 45px;
+				position: relative;
+				font-size: 20px;
+				font-family: 'ProximaNova';
+				color: #000;
+				@media (max-width: $screen-xs-max){
+					font-size: 17px;
+				}
+				&:before{
+					content: counter(my-counter);
+					counter-increment: my-counter;
+					color: #000;
+					display: block;
+					float: left;
+					margin-left: -45px;
+					text-align: center;
+					height: 26px;
+					width: 26px;
+					border: 1px solid #092033;
+					border-radius: 50%;
+					font-size: 20px;
+					line-height: 26px;
+					font-family: 'ProximaNova';
+				}
+			}
+		}
+		.email__calculation{
+			padding-top: 30px;
+			padding-bottom: 35px;
+			min-height: 0;
+			p{
+				font-size: 18px;
+			}
+		}
+	}	
+}

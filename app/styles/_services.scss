@@ -1,14 +1,28 @@
 .services{
 	padding-top: 35px;
-	padding-bottom: 35px;
+	padding-bottom: 35px;	
 	@media (max-width: $screen-xs-max){
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 20px;
 	}
-	.caption-wrap{
-		margin-bottom: 40px;
+	h2{
+		margin: 0;
+		font-size: 30px;
+		font-family: 'ProximaNova-Semibold';
+		border-bottom: 1px solid #c0c1c4;
+		padding-bottom: 10px;
+		@media (max-width: $screen-sm-max){
+			padding-left: 15px;
+			font-size: 25px;
+		}
+	}
+	&__items{
+		padding-top: 40px;
+		@media (max-width: $screen-sm-max){
+			padding-top: 30px;
+		}
 		@media (max-width: $screen-xs-max){
-			margin-bottom: 20px;
+			padding-top: 15px;
 		}
 	}
 	&__block{
