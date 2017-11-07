@@ -13029,8 +13029,8 @@ div.tabs div h2 {
 
 .services__img {
   margin-right: 17px;
-  width: 90px;
-  height: 90px;
+  width: 92px;
+  height: 92px;
   border-radius: 10em;
   display: block;
   background-color: #fff;
@@ -13156,8 +13156,8 @@ div.tabs div h2 {
 }
 
 .services__img img {
-  width: 65%;
-  max-width: 65%;
+  width: 100%;
+  max-width: 100%;
 }
 
 .services__block-wrap {
@@ -13482,8 +13482,8 @@ div.tabs div h2 {
 }
 
 .steps__img-wrap {
-  width: 150px;
-  height: 150px;
+  width: 157px;
+  height: 157px;
   border: 4px solid #fff;
   border-radius: 10em;
   display: -moz-flex;
@@ -14038,6 +14038,14 @@ div.tabs div h2 {
     position: relative;
     height: 300px;
   }
+}
+
+.contacts .connection__form-block {
+  padding-top: 0;
+}
+
+.contacts .connection__form-block p {
+  padding-top: 0;
 }
 
 .not-found {
@@ -19071,4 +19079,56 @@ div.tabs div h2 {
 
 .advancement .connection__form-block .submit {
   max-width: 295px;
+}
+
+.advancement .service__links--dev-links {
+  min-height: 290px;
+}
+
+.advancement .service__links--dev-links .services__block-wrap .services__block--dev {
+  display: inline-block;
+  max-width: 282px;
+  padding-right: 5px;
+}
+
+@media (max-width: 991px) {
+  .advancement .service__links--dev-links .services__block-wrap .services__block--dev {
+    max-width: 100%;
+  }
+}
+
+.advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-desc {
+  padding-left: 0;
+}
+
+.advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-desc p {
+  font-size: 18px;
+}
+
+@media (max-width: 1199px) {
+  .advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-desc p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-desc p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-wrap .services__img-desc .price {
+    padding-left: 80px;
+  }
+}
+
+.advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-wrap .services__img-desc .price p {
+  font-size: 18px;
+  font-family: 'ProximaNova';
+}
+
+.advancement .service__links--dev-links .services__block-wrap .services__block--dev .services__img-wrap .services__img-desc .price p span {
+  font-size: 18px;
+  font-family: 'ProximaNova';
 }
