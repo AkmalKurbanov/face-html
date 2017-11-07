@@ -1,3 +1,20 @@
 .advancement{
-	
+	padding-top: 35px;
+	padding-bottom: 45px;
+	.dev__advancement{
+		background-color: #fff;
+
+		p{
+			&:first-child{
+				font-family: 'ProximaNova';
+				font-size: 25px;
+				padding-bottom: 25px;
+			}
+		}
+	}
+	.connection__form-block{
+		.submit{
+			max-width: 295px;
+		}
+	}
 }

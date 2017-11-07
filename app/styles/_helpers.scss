@@ -119,17 +119,7 @@ body{
 		}
 	}
 }
-.dev__advancement{
-	background-color: #fff;
-	min-height: 180px;
-	p{
-		&:first-child{
-			font-family: 'ProximaNova';
-			font-size: 25px;
-			padding-bottom: 25px;
-		}
-	}
-}
+
 .connection__form-block{
 	padding-top: 20px;
 	@media (max-width: $screen-xs-max){
@@ -831,3 +821,18 @@ div.tabs div h2 {
 .mm-listview {
 	font-size: 16px;
 }	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
