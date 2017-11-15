@@ -14,12 +14,18 @@ $(document).ready(function () {
   }).filter(':first').click();
 
   // scroll
-  $('a[href^="#"]').click(function () {
-    var target = $(this).attr('href');
-    $('html, body').animate({ scrollTop: $(target).offset().top }, 2000); //800 - длительность скроллинга в мс
-    return false;
-  });
+  // $('a[href^="#"]').click(function(){
+  //   var target = $(this).attr('href');
+  // $('html, body').animate({scrollTop: $(target).offset().top}, 2000);//800 - длительность скроллинга в мс
+  // return false; 
+  // });  
   // scroll
+
+
+  // steps tabs
+
+  // steps tabs
+
 
   // rating stars
   var $star_rating = $('.star-rating .fa');
@@ -379,4 +385,11 @@ $(document).ready(function () {
     columnWidth: 3000
   });
   // masonry
+
+
+  // tabs-steps
+
+
+  // tabs-steps
+
 });

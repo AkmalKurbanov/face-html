@@ -1,6 +1,9 @@
 .advancement{
 	padding-top: 35px;
 	padding-bottom: 45px;
+	.service__links--dev-links .services__img-desc .price span{
+		font-size: 19px;
+	}
 	.dev__advancement{
 		background-color: #fff;
 
@@ -13,6 +16,8 @@
 		}
 	}
 	.connection__form-block{
+		border-top: 1px solid #c0c1c4;
+		margin-top: 15px;
 		.submit{
 			max-width: 295px;
 		}

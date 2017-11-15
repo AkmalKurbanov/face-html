@@ -49,9 +49,18 @@
 		}
 	}
 	.connection__form-block{
-		padding-top: 0;
+		padding: 0;
+		.login{
+			padding-top: 5px;
+			@media (max-width: $screen-sm-max){
+				padding-bottom: 40px;
+			}
+		}
 		p{
 			padding-top: 0;
 		}
+	}
+	input{
+		padding-top: 10px;
 	}
 }

@@ -12,17 +12,25 @@ var tabContainers = $('div.tabs > div'); // получаем массив кон
         $('div.tabs ul.tabNavigation a').removeClass('selected'); // у всех убираем класс 'selected'
         $(this).addClass('selected'); // текушей вкладке добавляем класс 'selected'
         return false;
-    }).filter(':first').click();
+      }).filter(':first').click();
 
 
 
 // scroll
-$('a[href^="#"]').click(function(){
-  var target = $(this).attr('href');
-$('html, body').animate({scrollTop: $(target).offset().top}, 2000);//800 - длительность скроллинга в мс
-return false; 
-});  
+// $('a[href^="#"]').click(function(){
+//   var target = $(this).attr('href');
+// $('html, body').animate({scrollTop: $(target).offset().top}, 2000);//800 - длительность скроллинга в мс
+// return false; 
+// });  
 // scroll
+
+
+
+// steps tabs
+
+// steps tabs
+
+
 
 // rating stars
 var $star_rating = $('.star-rating .fa');
@@ -175,61 +183,61 @@ $(".login").submit(function(){
 //   $(".selLabel").click(function () {
 //     $('.dropdown').toggleClass('active');
 //   });
-  
+
 //   $(".dropdown-list li").click(function() {
 //     $('.selLabel').text($(this).text());
 //     $('.dropdown').removeClass('active');
 //     $('.selected-item p span').text($('.selLabel').text());
 //   });
-  
+
 // });
 /*
 Reference: http://jsfiddle.net/BB3JK/47/
 */
 
 $('select').each(function(){
-    var $this = $(this), numberOfOptions = $(this).children('option').length;
+  var $this = $(this), numberOfOptions = $(this).children('option').length;
   
-    $this.addClass('select-hidden'); 
-    $this.wrap('<div class="select"></div>');
-    $this.after('<div class="select-styled"></div>');
+  $this.addClass('select-hidden'); 
+  $this.wrap('<div class="select"></div>');
+  $this.after('<div class="select-styled"></div>');
 
-    var $styledSelect = $this.next('div.select-styled');
-    $styledSelect.text($this.children('option').eq(0).text());
+  var $styledSelect = $this.next('div.select-styled');
+  $styledSelect.text($this.children('option').eq(0).text());
   
-    var $list = $('<ul />', {
-        'class': 'select-options'
-    }).insertAfter($styledSelect);
+  var $list = $('<ul />', {
+    'class': 'select-options'
+  }).insertAfter($styledSelect);
   
-    for (var i = 0; i < numberOfOptions; i++) {
-        $('<li />', {
-            text: $this.children('option').eq(i).text(),
-            rel: $this.children('option').eq(i).val()
-        }).appendTo($list);
-    }
+  for (var i = 0; i < numberOfOptions; i++) {
+    $('<li />', {
+      text: $this.children('option').eq(i).text(),
+      rel: $this.children('option').eq(i).val()
+    }).appendTo($list);
+  }
   
-    var $listItems = $list.children('li');
+  var $listItems = $list.children('li');
   
-    $styledSelect.click(function(e) {
-        e.stopPropagation();
-        $('div.select-styled.active').not(this).each(function(){
-            $(this).removeClass('active').next('ul.select-options').hide();
-        });
-        $(this).toggleClass('active').next('ul.select-options').toggle();
+  $styledSelect.click(function(e) {
+    e.stopPropagation();
+    $('div.select-styled.active').not(this).each(function(){
+      $(this).removeClass('active').next('ul.select-options').hide();
     });
+    $(this).toggleClass('active').next('ul.select-options').toggle();
+  });
   
-    $listItems.click(function(e) {
-        e.stopPropagation();
-        $styledSelect.text($(this).text()).removeClass('active');
-        $this.val($(this).attr('rel'));
-        $list.hide();
+  $listItems.click(function(e) {
+    e.stopPropagation();
+    $styledSelect.text($(this).text()).removeClass('active');
+    $this.val($(this).attr('rel'));
+    $list.hide();
         //console.log($this.val());
-    });
+      });
   
-    $(document).click(function() {
-        $styledSelect.removeClass('active');
-        $list.hide();
-    });
+  $(document).click(function() {
+    $styledSelect.removeClass('active');
+    $list.hide();
+  });
 
 });
 // drop down
@@ -387,6 +395,30 @@ $('.elements-gride').masonry({
         columnWidth: 3000
       });
 // masonry
+
+
+
+
+
+
+
+
+// tabs-steps
+
+
+
+
+// tabs-steps
+
+
+
+
+
+
+
+
+
+
 
 });
 

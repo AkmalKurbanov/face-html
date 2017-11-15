@@ -1,6 +1,6 @@
 .design{
 	padding-top: 34px;
-	padding-bottom: 20px;
+	padding-bottom: 45px;
 	@media (max-width: $screen-xs-max){
 		padding-bottom: 30px;
 	}
@@ -111,7 +111,7 @@
 		}
 	}
 	&__serv-submit{
-		padding-top: 35px;
+		padding-top: 16px;
 		.submit{
 			display: block;
 			text-decoration: none;
@@ -133,8 +133,10 @@
 		}
 	}
 	.connection__form-block{
+		padding-top: 8px;
 		.submit{
 			max-width: 295px;
+			line-height: 40px;
 		}
 	}
 }

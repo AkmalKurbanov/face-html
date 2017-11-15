@@ -1,6 +1,16 @@
 .ad{
 	padding-top: 35px;
 	padding-bottom: 30px;
+	.form-caption{
+		padding-bottom: 15px;
+		border-bottom: 1px solid #c0c1c4;
+		h2{
+			font-family: 'ProximaNova-Semibold';
+			border-bottom: none;
+			font-size: 30px;
+			padding: 0;
+		}
+	}
 	.caption-wrap{
 		h2{
 			font-family: 'ProximaNova';
@@ -37,9 +47,12 @@
 	}
 	&__img-wrap{
 		padding-bottom: 25px;
+		max-width: 85px;
+		width: 100%;
+		margin: 0 auto;
 		img{
 			width: 100%;
-			max-width: 85px;
+			max-width: 100%;
 		}
 	}
 	&__advantage-items{

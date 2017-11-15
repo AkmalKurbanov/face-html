@@ -1,6 +1,6 @@
 .pod{
 	padding-top: 35px;
-	padding-bottom: 20px;
+	padding-bottom: 25px;
 	.caption-wrap{
 		h2{
 			font-family: 'ProximaNova';
@@ -49,6 +49,7 @@
 			align-items: center;
 			p{
 				font-size: 26px;
+				padding: 0;
 				span{
 					font-family: 'ProximaNova-Semibold';
 					padding: 0 7px;
@@ -62,9 +63,6 @@
 				margin-top: 70px;
 			}
 		}
-	}
-	.dev__desc{
-		padding-bottom: 40px;
 	}
 	&__advantages{
 		padding-top: 55px;
@@ -83,6 +81,7 @@
 			font-size: 20px;
 			color: #092033;
 			margin: 0;
+			line-height: 24px;
 			@media (max-width: $screen-sm-max){
 				font-size: 16px;
 			}
@@ -104,8 +103,11 @@
 		}
 	}
 	&__cards{
-		padding-top: 40px;
-		text-align: center;		
+		padding-top: 55px;
+		text-align: center;
+		@media (max-width: $screen-xs-max){
+			padding-top: 0;
+		}		
 	}
 	&__rates-items{
 		display: inline-block;
@@ -153,8 +155,7 @@
 				max-width: 140px;
 			}
 			@media (max-width: $screen-xs-max){
-				max-width: 100%;
-				padding-top: 0;
+				display: none;
 			}
 			ul{
 				text-align: left;
@@ -167,7 +168,6 @@
 						font-family: 'ProximaNova';
 					}
 					i{
-						font-weight: bold;
 						margin-right: 10px;
 						float: none;
 					}
@@ -198,9 +198,7 @@
 						height: 75px;
 						overflow: hidden;
 					}
-
 					i{
-						font-weight: bold;
 						margin-right: 10px;
 						float: none;
 					}
@@ -219,8 +217,7 @@
 				max-width: 140px;
 			}
 			@media (max-width: $screen-xs-max){
-				max-width: 100%;
-				padding: 0;
+				display: none;
 			}
 			ul{			
 				text-align: right;
@@ -237,7 +234,6 @@
 						font-family: 'ProximaNova';
 					}
 					i{
-						font-weight: bold;
 						margin-right: 10px;
 						float: none;
 					}
@@ -258,10 +254,12 @@
 	}
 	&__advantages-caption{
 		padding-top: 15px;
-		padding-bottom: 25px;
+		padding-bottom: 20px;
 		p{
 			padding-top: 0;
 			font-family: 'ProximaNova-Semibold';
+			font-size: 20px;
+			margin: 0;
 		}
 	}
 	.email__calculation{
@@ -301,7 +299,7 @@
 				}
 			}
 			.submit{
-				margin-left: 30px;
+				margin-left: 30px;			
 			}
 			@media (max-width: $screen-xs-max){
 				flex-direction: column;
@@ -314,6 +312,9 @@
 				}
 				.submit{
 					margin-left: 0;
+					@media (max-width: $screen-xs-max){
+						margin: 0 auto;
+					}
 				}
 			}
 		}
@@ -322,7 +323,7 @@
 		text-align: center;
 	}
 	&__team-items{
-		margin-top: 60px;
+		margin-top: 50px;
 	}
 	&__team--img-wrap{
 		max-width: 121px;
